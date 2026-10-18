@@ -1,14 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { resetState } from "@/lib/store";
-import { useVoiceInput } from "@/lib/speech";
 import "@/styles/Frame217.css";
 
 const Frame217 = () => {
     const navigate = useNavigate();
-    const [spokenText, setSpokenText] = useState("");
-    const isListeningRef = useRef(false);
-    const isTranscribingRef = useRef(false);
+    const [question, setQuestion] = useState("");
 
     const card64Ref = useRef<HTMLDivElement>(null);
     const card79Ref = useRef<HTMLDivElement>(null);
@@ -32,55 +29,15 @@ const Frame217 = () => {
         card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
     };
 
-    const voice = useVoiceInput({
-        onResult: (text: string, isFinal: boolean) => {
-            setSpokenText(text);
-            if (isFinal && text.trim()) {
-            }
-        },
-        onError: (errMsg: string) => {
-            console.warn("语音错误:", errMsg);
-        },
-    });
-
-    useEffect(() => {
-        isListeningRef.current = voice.isListening;
-        isTranscribingRef.current = voice.isTranscribing;
-    }, [voice.isListening, voice.isTranscribing]);
-
     const go = useCallback((mode: "NAJIA" | "ZHOUYI") => {
-        if (voice.isListening) voice.stopListening();
-        const finalQuestion = spokenText.trim() || undefined;
+        const finalQuestion = question.trim() || undefined;
         resetState(mode, finalQuestion);
         navigate("/casting");
-    }, [voice, spokenText, navigate]);
+    }, [question, navigate]);
 
-    const handlePaperClick = useCallback(() => {
-        if (voice.isListening || voice.isTranscribing) {
-            voice.stopListening();
-        } else if (spokenText.trim()) {
-            setSpokenText("");
-        } else {
-            voice.startListening();
-        }
-    }, [voice, spokenText]);
-
-    const handleRetellClick = useCallback((e: React.MouseEvent) => {
-        e.stopPropagation();
-        setSpokenText("");
-    }, []);
-
-    const mode: "idle" | "listening" | "transcribing" | "spoken" =
-        voice.isListening ? "listening"
-        : voice.isTranscribing ? "transcribing"
-        : spokenText.trim() ? "spoken"
-        : "idle";
-
-    const hintText =
-        mode === "listening" ? "正在聆听所惑，再点素笺落字..."
-        : mode === "transcribing" ? "正在凝墨成字..."
-        : mode === "spoken" ? "所惑已入笺 · 请择下方问事或问道"
-        : "轻点素笺倾诉 · 或默念直接入局";
+    const hintText = question.trim()
+        ? "所惑已入笺 · 请择下方问事或问道"
+        : "默念所惑 · 落字更灵";
 
     return (
         <div className="scroll-container">
@@ -104,67 +61,30 @@ const Frame217 = () => {
                             {"静心 · 起问"}
                         </p>
 
-                        {/* 素笺区域 —— 三态交互 */}
                         <div
                             id="2_50"
-                            className={"stroke-wrapper-2_50 pixso-relative-no-shrink pixso-flex" + (mode === "listening" || mode === "transcribing" ? " is-listening" : "")}
-                            onClick={handlePaperClick}
-                            style={{ cursor: "pointer" }}
+                            className="stroke-wrapper-2_50 pixso-relative-no-shrink pixso-flex"
                         >
                             <div className="Pixso-frame-2_50 pixso-relative-no-shrink pixso-flex"></div>
                             <div className="stroke-2_50"></div>
                             <div className="Pixso-frame-2_50-content-layer">
                                 <div className="frame-content-2_50 pixso-relative-flex">
-                                    {(mode === "idle") && (
-                                        /* 默认静默态：竖排装饰文字 + 朱砂红线 */
-                                        <div
-                                            id="2_51"
-                                            className="Pixso-frame-2_51 pixso-relative-flex-auto-size pixso-flex-shrink-0"
+                                    <textarea
+                                        className="question-textarea"
+                                        value={question}
+                                        onChange={(e) => setQuestion(e.target.value)}
+                                        placeholder="所惑何解 · 所求何事"
+                                        rows={3}
+                                        maxLength={200}
+                                    />
+                                    {question.trim() && (
+                                        <button
+                                            className="clear-btn"
+                                            onClick={() => setQuestion("")}
+                                            aria-label="清除"
                                         >
-                                            <div
-                                                id="2_52"
-                                                className="Pixso-frame-2_52 pixso-relative-flex-auto-size pixso-flex-shrink-0"
-                                            >
-                                                <p id="2_53" className="Pixso-paragraph-2_53 pixso-relative-auto-size pixso-flex-shrink-0">{"所"}</p>
-                                                <p id="2_54" className="Pixso-paragraph-2_54 pixso-relative-auto-size pixso-flex-shrink-0">{"惑"}</p>
-                                                <p id="2_55" className="Pixso-paragraph-2_55 pixso-relative-auto-size pixso-flex-shrink-0">{"何"}</p>
-                                                <p id="2_56" className="Pixso-paragraph-2_56 pixso-relative-auto-size pixso-flex-shrink-0">{"解"}</p>
-                                            </div>
-                                            <div
-                                                id="2_57"
-                                                className="Pixso-frame-2_57 pixso-relative-flex-auto-size pixso-flex-shrink-0"
-                                            >
-                                                <p id="2_58" className="Pixso-paragraph-2_58 pixso-relative-auto-size pixso-flex-shrink-0">{"所"}</p>
-                                                <p id="2_59" className="Pixso-paragraph-2_59 pixso-relative-auto-size pixso-flex-shrink-0">{"求"}</p>
-                                                <p id="2_60" className="Pixso-paragraph-2_60 pixso-relative-auto-size pixso-flex-shrink-0">{"何"}</p>
-                                                <p id="2_61" className="Pixso-paragraph-2_61 pixso-relative-auto-size pixso-flex-shrink-0">{"事"}</p>
-                                                <div id="2_62" className="Pixso-frame-2_62 pixso-relative-no-shrink"></div>
-                                            </div>
-                                        </div>
-                                    )}
-
-                                    {(mode === "listening" || mode === "transcribing") && (
-                                        /* 聆听态：声波律动 + 实时文字 */
-                                        <div className="voice-panel">
-                                            <div className="ink-waves">
-                                                <span className="ink-wave-bar" style={{ animationDelay: "0s" }} />
-                                                <span className="ink-wave-bar" style={{ animationDelay: "0.15s" }} />
-                                                <span className="ink-wave-bar" style={{ animationDelay: "0.3s" }} />
-                                                <span className="ink-wave-bar" style={{ animationDelay: "0.45s" }} />
-                                                <span className="ink-wave-bar" style={{ animationDelay: "0.6s" }} />
-                                            </div>
-                                            {spokenText && (
-                                                <p className="voice-live-text">{spokenText}</p>
-                                            )}
-                                        </div>
-                                    )}
-
-                                    {mode === "spoken" && (
-                                        /* 落字态：展示识别文字 + 重述按钮 */
-                                        <div className="spoken-panel">
-                                            <p className="spoken-text">{spokenText}</p>
-                                            <button className="retell-btn" onClick={handleRetellClick}>重述</button>
-                                        </div>
+                                            ✕
+                                        </button>
                                     )}
                                 </div>
                             </div>
@@ -172,7 +92,7 @@ const Frame217 = () => {
 
                         <p
                             id="2_63"
-                            className={"Pixso-paragraph-2_63 pixso-relative-auto-size pixso-flex-shrink-0" + (mode === "listening" || mode === "transcribing" ? " hint-active" : "")}
+                            className="Pixso-paragraph-2_63 pixso-relative-auto-size pixso-flex-shrink-0"
                         >
                             {hintText}
                         </p>
@@ -256,4 +176,5 @@ const Frame217 = () => {
         </div>
     );
 };
+
 export default Frame217;
