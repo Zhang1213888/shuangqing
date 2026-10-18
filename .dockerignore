@@ -1,0 +1,14 @@
+node_modules
+**/node_modules
+.git
+**/.git
+.next
+**/.next
+dist
+**/dist
+.env
+**/.env
+*.log
+.vscode
+.idea
+Thumbs.db
