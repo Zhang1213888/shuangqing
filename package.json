@@ -5,7 +5,8 @@
   "description": "双擎易学系统 —— 同源起卦，双轨分流（文王纳甲六爻 + 周易义理）",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build:d2c && node scripts/copy-d2c.js && next build",
+    "build:d2c": "cd d2c && npm install && npm run build",
     "start": "next start",
     "test:engines": "tsx src/scripts/test-engines.ts"
   },
