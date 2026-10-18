@@ -7,7 +7,7 @@ const Frame2178 = () => {
     const [state] = useCastingState();
     const r = state.najiaResult;
     const L = (i: number) => r?.lines?.[i - 1];
-    const [selectedLine, setSelectedLine] = useState<number>(6);
+    const [selectedLine, setSelectedLine] = useState<number>(() => r?.yongshenIndex || r?.shiIndex || 6);
     const getPrimaryTag = (line: any): string => {
       if (!line) return '—';
       const t = line.tags || [];
@@ -88,7 +88,7 @@ const Frame2178 = () => {
                                                 id="2_216"
                                                 className="Pixso-paragraph-2_216 pixso-relative-auto-size pixso-flex-shrink-0"
                                             >
-                                                {r ? `本月定性 · ${r.benGuaName}（${r.gong}宫）` : "本月定性"}
+                                                {r ? `本月定性 · ${r.benGuaName}${r.bianGuaName && r.bianGuaName !== r.benGuaName ? `之${r.bianGuaName}` : ''}（${r.gong}宫）` : "本月定性"}
                                             </p>
                                             <p
                                                 id="2_217"
@@ -153,6 +153,8 @@ const Frame2178 = () => {
                                 <div
                                     id="2_226"
                                     className="stroke-wrapper-2_226 pixso-relative-no-shrink pixso-flex"
+                                    onClick={() => setSelectedLine(6)}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 6 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
                                 >
                                     <div className="Pixso-frame-2_226 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_226"></div>
@@ -167,15 +169,13 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_228"
                                                 className="Pixso-frame-2_228 pixso-relative-no-shrink pixso-flex"
-                                                onClick={() => setSelectedLine(6)}
-                                                style={{ cursor: "pointer" }}
                                             >
                                               {L(6)?.kind === 'YANG' ? (
-                                                <div style={{ width: '100%', height: 4, background: L(6)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                                <div style={{ width: '100%', height: 4, background: L(6)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, alignSelf: "center" }} />
                                               ) : (
                                                 <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
-                                                  <div style={{ height: 4, background: L(6)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
-                                                  <div style={{ height: 4, background: L(6)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(6)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(6)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
                                               )}
                                             </div>
@@ -218,6 +218,8 @@ const Frame2178 = () => {
                                 <div
                                     id="2_236"
                                     className="stroke-wrapper-2_236 pixso-relative-no-shrink pixso-flex"
+                                    onClick={() => setSelectedLine(5)}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 5 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
                                 >
                                     <div className="Pixso-frame-2_236 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_236"></div>
@@ -232,15 +234,13 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_238"
                                                 className="Pixso-frame-2_238 pixso-relative-no-shrink pixso-flex"
-                                                onClick={() => setSelectedLine(5)}
-                                                style={{ cursor: "pointer" }}
                                             >
                                               {L(5)?.kind === 'YANG' ? (
-                                                <div style={{ width: '100%', height: 4, background: L(5)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                                <div style={{ width: '100%', height: 4, background: L(5)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, alignSelf: "center" }} />
                                               ) : (
                                                 <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
-                                                  <div style={{ height: 4, background: L(5)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
-                                                  <div style={{ height: 4, background: L(5)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(5)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(5)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
                                               )}
                                             </div>
@@ -283,6 +283,8 @@ const Frame2178 = () => {
                                 <div
                                     id="2_246"
                                     className="stroke-wrapper-2_246 pixso-relative-no-shrink pixso-flex"
+                                    onClick={() => setSelectedLine(4)}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 4 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
                                 >
                                     <div className="Pixso-frame-2_246 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_246"></div>
@@ -297,15 +299,13 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_248"
                                                 className="Pixso-frame-2_248 pixso-relative-no-shrink pixso-flex"
-                                                onClick={() => setSelectedLine(4)}
-                                                style={{ cursor: "pointer" }}
                                             >
                                               {L(4)?.kind === 'YANG' ? (
-                                                <div style={{ width: '100%', height: 4, background: L(4)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                                <div style={{ width: '100%', height: 4, background: L(4)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, alignSelf: "center" }} />
                                               ) : (
                                                 <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
-                                                  <div style={{ height: 4, background: L(4)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
-                                                  <div style={{ height: 4, background: L(4)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(4)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(4)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
                                               )}
                                             </div>
@@ -348,6 +348,8 @@ const Frame2178 = () => {
                                 <div
                                     id="2_255"
                                     className="stroke-wrapper-2_255 pixso-relative-no-shrink pixso-flex"
+                                    onClick={() => setSelectedLine(3)}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 3 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
                                 >
                                     <div className="Pixso-frame-2_255 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_255"></div>
@@ -362,15 +364,13 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_257"
                                                 className="Pixso-frame-2_257 pixso-relative-no-shrink pixso-flex"
-                                                onClick={() => setSelectedLine(3)}
-                                                style={{ cursor: "pointer" }}
                                             >
                                               {L(3)?.kind === 'YANG' ? (
-                                                <div style={{ width: '100%', height: 4, background: L(3)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                                <div style={{ width: '100%', height: 4, background: L(3)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, alignSelf: "center" }} />
                                               ) : (
                                                 <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
-                                                  <div style={{ height: 4, background: L(3)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
-                                                  <div style={{ height: 4, background: L(3)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(3)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(3)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
                                               )}
                                             </div>
@@ -413,6 +413,8 @@ const Frame2178 = () => {
                                 <div
                                     id="2_264"
                                     className="stroke-wrapper-2_264 pixso-relative-no-shrink pixso-flex"
+                                    onClick={() => setSelectedLine(2)}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 2 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
                                 >
                                     <div className="Pixso-frame-2_264 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_264"></div>
@@ -427,15 +429,13 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_266"
                                                 className="Pixso-frame-2_266 pixso-relative-no-shrink pixso-flex"
-                                                onClick={() => setSelectedLine(2)}
-                                                style={{ cursor: "pointer" }}
                                             >
                                               {L(2)?.kind === 'YANG' ? (
-                                                <div style={{ width: '100%', height: 4, background: L(2)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                                <div style={{ width: '100%', height: 4, background: L(2)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, alignSelf: "center" }} />
                                               ) : (
                                                 <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
-                                                  <div style={{ height: 4, background: L(2)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
-                                                  <div style={{ height: 4, background: L(2)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(2)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(2)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
                                               )}
                                             </div>
@@ -492,15 +492,13 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_276"
                                                 className="Pixso-frame-2_276 pixso-relative-no-shrink pixso-flex"
-                                                onClick={() => setSelectedLine(1)}
-                                                style={{ cursor: "pointer" }}
                                             >
                                               {L(1)?.kind === 'YANG' ? (
-                                                <div style={{ width: '100%', height: 4, background: L(1)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                                <div style={{ width: '100%', height: 4, background: L(1)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, alignSelf: "center" }} />
                                               ) : (
                                                 <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
-                                                  <div style={{ height: 4, background: L(1)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
-                                                  <div style={{ height: 4, background: L(1)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(1)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(1)?.isMoving ? 'var(--c-cinnabar)' : 'var(--c-ink)', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
                                               )}
                                             </div>
@@ -552,17 +550,21 @@ const Frame2178 = () => {
                                         id="2_284"
                                         className="Pixso-paragraph-2_284 pixso-relative-auto-size pixso-flex-shrink-0"
                                     >
-                                        {r ? `第${selectedLine}爻 · ${L(selectedLine)?.liuqin || '—'}${L(selectedLine)?.ganzhi || ''}${L(selectedLine)?.tags?.includes('用神') ? '（用神）' : ''}` : '择爻 · —'}
+                                        {(() => {
+                                                if (selectedLine === r?.yongshenIndex && r?.tooltip?.content) return r.tooltip.title;
+                                                return r ? `第${selectedLine}爻 · ${L(selectedLine)?.liuqin || '—'}${L(selectedLine)?.ganzhi || ''}${L(selectedLine)?.tags?.includes('用神') ? '（用神）' : ''}` : '择爻 · —';
+                                              })()}
                                     </p>
                                     <p
                                         id="2_285"
                                         className="Pixso-paragraph-2_285 pixso-relative-no-shrink pixso-h-auto"
                                     >
-                                        {
-                                            L(selectedLine)
-                                              ? `第${selectedLine}爻${L(selectedLine)?.ganzhi || ''}，${L(selectedLine)?.liuqin || ''}持${L(selectedLine)?.tags?.join('、') || '静爻'}。${L(selectedLine)?.isMoving ? '此爻发动，为事之转机所在。' : '此爻安静，事尚未起。'}`
-                                              : r?.tooltip?.content ?? ''
-                                        }
+                                        {(() => {
+                                                if (selectedLine === r?.yongshenIndex && r?.tooltip?.content) return r.tooltip.content;
+                                                if (L(selectedLine))
+                                                  return `第${selectedLine}爻${L(selectedLine)?.ganzhi || ''}，${L(selectedLine)?.liuqin || ''}持${L(selectedLine)?.tags?.join('、') || '静爻'}。${L(selectedLine)?.isMoving ? '此爻发动，为事之转机所在。' : '此爻安静，事尚未起。'}`;
+                                                return r?.tooltip?.content ?? '';
+                                              })()}
                                     </p>
                                 </div>
                             </div>

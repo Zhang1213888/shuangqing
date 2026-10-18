@@ -978,7 +978,8 @@
   font-family: "Source Han Sans CN-Medium";
   letter-spacing: 2px;
   color: var(--c-gold);
-  white-space: pre;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .Pixso-paragraph-2_285 {

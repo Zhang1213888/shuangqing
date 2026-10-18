@@ -817,13 +817,12 @@
   justify-content: space-between;
   padding: 58px 24px 0;
 }
-.sq-header-back, .sq-header-more {
+.sq-header-back {
   font-size: 16px;
   color: var(--c-ink);
   width: 32px;
   user-select: none;
 }
-.sq-header-more { letter-spacing: 2px; }
 .sq-header-title {
   font-size: 15px;
   font-family: "Source Han Serif CN-Regular";

@@ -246,9 +246,7 @@ const Frame2309 = () => {
                                     id="2_391"
                                     className="Pixso-paragraph-2_391 pixso-relative-no-shrink pixso-h-auto"
                                 >
-                                    {
-                                        "行运提示：此卦之象，宜守七日；立秋后动，事缓则圆。"
-                                    }
+                                    {r ? `行运提示：本卦逢「${r.route}」，${r.bianGua ? `由${r.benGua.name}化${r.bianGua.name}，顺时应势则圆。` : '六爻安静，守中道而行，静待天时。'}` : "行运提示：此卦之象，宜守中道，顺势而为。"}
                                 </p>
                             </div>
                         </div>

@@ -428,7 +428,8 @@
   font-family: "Source Han Serif CN-Medium";
   letter-spacing: 3px;
   color: var(--c-ink);
-  white-space: pre;
+  white-space: normal;
+  word-break: break-word;
   flex-grow: 0;
 }
 
@@ -478,7 +479,8 @@
   font-feature-settings: "locl" 0;
   color: var(--c-ink-mid);
   width: 292px;
-  white-space: pre;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .Pixso-frame-2_392 {

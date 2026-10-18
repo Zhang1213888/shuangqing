@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
-import { useCastingState, tossOnce } from "@/lib/store";
+import { useCastingState, tossOnce, saveState } from "@/lib/store";
 import { castApi, interpretApi } from "@/lib/api";
 import "@/styles/Frame290.css";
 
@@ -53,22 +53,25 @@ const Frame290 = () => {
       if (tosses.length === 6) {
         update({ ...cur, tosses });
         setSubmitting(true);
+        const resultKey = cur.mode === 'NAJIA' ? 'najiaResult' : 'zhouyiResult';
+        const route = cur.mode === "NAJIA" ? "/najia" : "/zhouyi";
         try {
-          let result = await castApi({
+          const baseResult = await castApi({
             mode: cur.mode,
             question: cur.question || "惟精惟一，心中默念所求之事",
             timestamp: Date.now(),
             tosses: tosses as [number, number, number, number, number, number],
           });
-          try {
-            result = await interpretApi(result, cur.question || "惟精惟一，心中默念所求之事");
-          } catch (e) {
-            console.warn("interpret 降级为引擎文案", e);
-          }
-          update({ ...cur, tosses, [cur.mode === 'NAJIA' ? 'najiaResult' : 'zhouyiResult']: result });
-          navigate(cur.mode === "NAJIA" ? "/najia" : "/zhouyi");
+          update({ ...cur, tosses, [resultKey]: baseResult });
+          navigate(route);
+          interpretApi(baseResult, cur.question || "心中默念，凝神问卜").then((aiResult) => {
+            saveState({ ...cur, tosses, [resultKey]: aiResult });
+          }).catch((e) => {
+            console.warn("interpret 后台降级为引擎文案", e);
+          });
         } catch (e) {
           console.error(e);
+          update({ ...cur, tosses: cur.tosses });
           setSubmitting(false);
         }
       } else {
@@ -100,6 +103,11 @@ const Frame290 = () => {
     }
   };
   useEffect(() => () => stopHold(), []);
+  useEffect(() => {
+    if (stateRef.current.tosses.length >= 6) {
+      update({ ...stateRef.current, tosses: [] });
+    }
+  }, []);
 
   const n = state.tosses.length;
   const posLabel = n >= 6 ? "六爻既成 · 卦象已定" : `第 ${n + 1} 爻 · 凝神再问`;
@@ -111,7 +119,6 @@ const Frame290 = () => {
         <div className="sq-header">
           <p className="sq-header-back" onClick={() => navigate("/")} style={{ cursor: "pointer" }}>←</p>
           <p className="sq-header-title">{modeTitle}</p>
-          <p className="sq-header-more">···</p>
         </div>
 
         {/* 所问 + 分隔线 */}
