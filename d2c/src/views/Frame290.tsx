@@ -40,7 +40,6 @@ const Frame290 = () => {
   const [landing, setLanding] = useState(false);
   const [counterKey, setCounterKey] = useState(0);
   const prevN = useRef(0);
-  const holdTimer = useRef<number | null>(null);
   const landingTimer = useRef<number | null>(null);
   const question = state.question || "惟精惟一，心中默念所求之事";
   const modeTitle = state.mode === "ZHOUYI" ? "问道 · 周易" : "问事 · 六爻";
@@ -92,27 +91,12 @@ const Frame290 = () => {
   const stateRef = useRef(state);
   stateRef.current = state;
 
-  /** 长按：连投直到 6 爻满或松手（伴随触觉震动） */
-  const startHold = () => {
-    if (holdTimer.current) return;
+  /** 点击触发一次起卦 */
+  const handleToss = () => {
     navigator.vibrate?.([40, 60, 40]);
     doToss();
-    holdTimer.current = window.setInterval(() => {
-      if (stateRef.current.tosses.length >= 6) {
-        stopHold();
-        return;
-      }
-      navigator.vibrate?.([40, 60, 40]);
-      doToss();
-    }, 1600);
   };
-  const stopHold = () => {
-    if (holdTimer.current) {
-      clearInterval(holdTimer.current);
-      holdTimer.current = null;
-    }
-  };
-  useEffect(() => () => { stopHold(); if (landingTimer.current) clearTimeout(landingTimer.current); }, []);
+  useEffect(() => () => { if (landingTimer.current) clearTimeout(landingTimer.current); }, []);
   useEffect(() => {
     if (stateRef.current.tosses.length >= 6) {
       update({ ...stateRef.current, tosses: [] });
@@ -150,7 +134,7 @@ const Frame290 = () => {
             </div>
           </div>
           <p className="sq-coin-hint">
-            {submitting ? "铜钱落定 · 推演中…" : casting ? "…落爻" : "长按下方起卦 · 松手成爻"}
+            {submitting ? "铜钱落定 · 推演中…" : casting ? "…落爻" : "轻触铜钱起卦 · 共投六次"}
           </p>
         </div>
 
@@ -173,13 +157,11 @@ const Frame290 = () => {
             <button
               id="2_175"
               className="sq-cast-btn"
-              onPointerDown={startHold}
-              onPointerUp={stopHold}
-              onPointerLeave={stopHold}
-              disabled={n >= 6 || submitting}
+              onClick={handleToss}
+              disabled={n >= 6 || submitting || casting}
             >
               <i className="sq-cast-dot" />
-              {submitting ? "推演中…" : n >= 6 ? "卦象已成" : "长按起卦"}
+              {submitting ? "推演中…" : n >= 6 ? "卦象已成" : "轻触起卦"}
             </button>
           </div>
         </div>
