@@ -13,10 +13,18 @@
   transform: translateX(-50%);
   width: 100%;
   max-width: 390px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--c-paper);
+}
+
+.Pixso-frame-2_17::-webkit-scrollbar {
+  display: none;
 }
 
 .Pixso-frame-2_18,.frame-content-2_18,.frame-content-2_38 {
@@ -322,8 +330,9 @@
 
 .stroke-wrapper-2_50 {
   isolation: isolate;
-  width: 132px;
-  height: 212px;
+  width: 100%;
+  max-width: 132px;
+  height: clamp(130px, 28vh, 212px);
 }
 
 .stroke-2_50 {
