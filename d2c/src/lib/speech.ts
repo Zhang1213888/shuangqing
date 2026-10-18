@@ -157,8 +157,13 @@ function useMediaRecorder(options: UseVoiceOptions) {
       recorder.start();
       setIsListening(true);
     } catch (e: any) {
-      options.onError?.(e.message || "无法访问麦克风");
-    }
+          const msg = String(e.message || e.name || e || "");
+          if (/not.?allowed|permission/i.test(msg)) {
+            options.onError?.("语音需要 HTTPS 或 localhost 环境，当前 HTTP 不支持");
+          } else {
+            options.onError?.("无法访问麦克风：" + (msg || "未知错误"));
+          }
+        }
   }, [options]);
 
   const stopListening = useCallback(() => {
@@ -179,10 +184,13 @@ export function useVoiceInput(options: UseVoiceOptions): {
   toggleListening: () => void;
 } {
   const [engine, setEngine] = useState<"web-speech" | "media-recorder" | null>(null);
+  const engineRef = useRef(engine);
+  engineRef.current = engine;
+
   const webSpeech = useWebSpeech({
     ...options,
     onError: (err) => {
-      if (engine === "web-speech" && (err === "network" || err === "not-allowed" || err === "service-not-allowed")) {
+      if (engineRef.current === "web-speech" && (err === "network" || err === "not-allowed" || err === "service-not-allowed")) {
         setEngine("media-recorder");
       } else {
         options.onError?.(err);
@@ -195,15 +203,13 @@ export function useVoiceInput(options: UseVoiceOptions): {
 
   const startListening = useCallback(() => {
     const Ctor = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (engine === null) {
-      if (Ctor) {
-        setEngine("web-speech");
-      } else {
-        setEngine("media-recorder");
-      }
-      return;
+    const targetEngine = engine || (Ctor ? "web-speech" : "media-recorder");
+
+    if (targetEngine !== engine) {
+      setEngine(targetEngine);
     }
-    if (engine === "media-recorder") {
+
+    if (targetEngine === "media-recorder") {
       mediaRecorder.startListening();
     } else {
       webSpeech.startListening();
