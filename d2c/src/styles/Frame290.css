@@ -931,6 +931,7 @@
 }
 .sq-coin-hint {
   margin-top: 26px;
+  margin-bottom: 16px;
   font-size: 11px;
   color: var(--c-ink-light);
   letter-spacing: 4px;
