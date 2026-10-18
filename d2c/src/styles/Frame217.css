@@ -291,7 +291,7 @@
 }
 
 .frame-content-2_47 {
-  gap: clamp(12px, 5vh, 34px);
+  gap: clamp(12px, 4vh, 34px);
   padding: clamp(10px, 3vh, 24px) 24px clamp(10px, 2.5vh, 20px) 24px;
   height: 100%;
 }
