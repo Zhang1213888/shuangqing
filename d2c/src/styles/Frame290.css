@@ -865,7 +865,6 @@
   width: 236px;
   height: 236px;
   border-radius: 50%;
-  border: 1px dashed var(--c-hairline);
   display: flex;
   align-items: center;
   justify-content: center;
