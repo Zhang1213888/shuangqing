@@ -17,7 +17,9 @@ export interface CastingState {
 }
 
 const KEY = 'sq_casting_state';
-const empty: CastingState = { mode: 'NAJIA', question: '心中默念，凝神问卜', tosses: [] };
+export const DEFAULT_QUESTION = '心中默念，凝神问卜';
+
+const empty: CastingState = { mode: 'NAJIA', question: DEFAULT_QUESTION, tosses: [] };
 
 export function loadState(): CastingState {
   try {
@@ -33,8 +35,22 @@ export function saveState(s: CastingState) {
   window.dispatchEvent(new Event('sq-state-change'));
 }
 
-export function resetState(mode: CastMode) {
-  saveState({ mode, question: '心中默念，凝神问卜', tosses: [] });
+export function resetState(mode: CastMode, customQuestion?: string) {
+  const cur = loadState();
+  const rawQ = (customQuestion !== undefined ? customQuestion : cur.question)?.trim();
+  const finalQuestion = rawQ && rawQ !== DEFAULT_QUESTION ? rawQ : DEFAULT_QUESTION;
+  saveState({
+    mode,
+    question: finalQuestion,
+    tosses: [],
+    najiaResult: undefined,
+    zhouyiResult: undefined,
+  });
+}
+
+export function setQuestion(question: string) {
+  const cur = loadState();
+  saveState({ ...cur, question: question.trim() || DEFAULT_QUESTION });
 }
 
 /** React hook：订阅状态变化 */

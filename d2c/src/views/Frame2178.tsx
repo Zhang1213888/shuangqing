@@ -478,6 +478,8 @@ const Frame2178 = () => {
                                 <div
                                     id="2_274"
                                     className="stroke-wrapper-2_274 pixso-relative-no-shrink pixso-flex"
+                                    onClick={() => setSelectedLine(1)}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 1 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
                                 >
                                     <div className="Pixso-frame-2_274 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_274"></div>

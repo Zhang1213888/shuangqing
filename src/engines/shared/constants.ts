@@ -131,7 +131,7 @@ export const GONG_WUXING: Record<BaGong, WuXing> = {
 export type BagongEntry = [Trigram, Trigram, number, number];
 
 /** 生成八宫卦序：每宫从纯卦起，按爻变规则推一世~五世、游魂、归魂 */
-export function buildBagongTable(): Record<string, { gong: BaGong; wai: Trigram; nei: Trigram; shi: number; ying: number }> {
+export function buildBagongTable(): Record<string, { gong: BaGong; wai: Trigram; nei: Trigram; shi: number; ying: number; kind?: string }> {
   const table: ReturnType<typeof buildBagongTable> = {};
   const gongs: BaGong[] = ['乾', '坎', '艮', '震', '巽', '离', '坤', '兑'];
   for (const gong of gongs) {
