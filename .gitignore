@@ -1,0 +1,31 @@
+# 依赖
+node_modules/
+**/node_modules/
+
+# 构建产物
+dist/
+**/dist/
+.next/
+**/.next/
+dist-ssr-test/
+
+# 环境变量（含 API key，严禁提交！）
+.env
+**/.env
+.env.local
+**/.env.local
+
+# 日志与临时文件
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# Vite 缓存
+**/node_modules/.vite/
+.vite/

@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ol,ul,menu {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+ol li::marker, ul li::before {
+  letter-spacing: 0;
+}
+
+.scroll-container > div {
+  width: 100%;
+}
+
+.container > div {
+  width: 100%;
+}
+
+.Pixso-canvas-0_1 > div {
+  width: 100%;
+}
+
+.pixso-transparent-flex-auto-size {
+  background-color: transparent;
+  display: flex;
+  width: auto;
+  height: auto;
+}
+
+.pixso-relative-flex-auto-size {
+  position: relative;
+  display: flex;
+  width: auto;
+  height: auto;
+}
+
+.pixso-transparent-flex-auto-height {
+  background-color: transparent;
+  display: flex;
+  height: auto;
+}
+
+.pixso-transparent-flex-auto-width {
+  background-color: transparent;
+  display: flex;
+  width: auto;
+}
+
+.pixso-flex-auto-size {
+  display: flex;
+  width: auto;
+  height: auto;
+}
+
+.pixso-transparent-auto-size {
+  background-color: transparent;
+  width: auto;
+  height: auto;
+}
+
+.pixso-relative-auto-size {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.pixso-auto-size {
+  width: auto;
+  height: auto;
+}
+
+.pixso-relative-no-shrink {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.pixso-relative-flex {
+  position: relative;
+  display: flex;
+}
+
+.pixso-transparent-auto-height {
+  background-color: transparent;
+  height: auto;
+}
+
+.pixso-flex-auto-height {
+  display: flex;
+  height: auto;
+}
+
+.pixso-flex-auto-width {
+  display: flex;
+  width: auto;
+}
+
+.pixso-transparent-flex {
+  background-color: transparent;
+  display: flex;
+}
+
+.pixso-transparent-auto-width {
+  background-color: transparent;
+  width: auto;
+}
+
+.pixso-position-relative {
+  position: relative;
+}
+
+.pixso-flex {
+  display: flex;
+}
+
+.pixso-flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.pixso-bg-transparent {
+  background-color: transparent;
+}
+
+.pixso-w-auto {
+  width: auto;
+}
+
+.pixso-h-auto {
+  height: auto;
+}
+/* ==========================================================
+   手机画布适配层（WorkBuddy 集成补充）
+   设计稿为 390×844 手机画板。在桌面宽屏下以"手机壳"居中呈现；
+   在真实手机/窄视口下全屏铺满。
+   ========================================================== */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: #1c1b18; /* 桌面端手机壳外的暗色背景 */
+}
+
+/* 手机壳舞台：宽屏时居中，窄屏时全屏 */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.scroll-container {
+  width: 100%;
+  max-width: 390px;           /* 设计稿画板宽度 */
+  min-height: 100vh;
+  background: var(--c-paper);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 桌面端加个柔和的投影，模拟手机屏幕 */
+@media (min-width: 480px) {
+  .scroll-container {
+    min-height: 100vh;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 24px 80px rgba(0,0,0,0.55);
+  }
+}
+
+/* 真机（手机）下全屏 */
+@media (max-width: 479px) {
+  body { background: var(--c-paper); }
+}

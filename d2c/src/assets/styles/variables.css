@@ -1,0 +1,15 @@
+:root, 
+[data-collection-2-2-mode=""] {
+  /* 默认 */
+  --c-paper-tint: rgba(242, 237, 225, 1);
+  --c-gold: rgba(176, 141, 79, 1);
+  --c-ink: rgba(46, 49, 47, 1);
+  --c-paper-deep: rgba(239, 235, 223, 1);
+  --c-ink-mid: rgba(92, 95, 89, 1);
+  --c-bamboo: rgba(107, 122, 106, 1);
+  --c-cinnabar: rgba(200, 60, 35, 1);
+  --c-hairline: rgba(220, 214, 198, 1);
+  --c-paper: rgba(246, 243, 235, 1);
+  --c-ink-light: rgba(140, 138, 128, 1);
+}
+

@@ -1,0 +1,981 @@
+
+.scroll-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.Pixso-frame-2_90 {
+  width: 100%;
+  height: 844px;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--c-paper);
+}
+
+.Pixso-frame-2_91,.frame-content-2_91,.frame-content-2_111,.Pixso-frame-2_138,.frame-content-2_138 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Pixso-frame-2_91 {
+  height: 62px;
+}
+
+.frame-content-2_91,.frame-content-2_111 {
+  padding: 0px 24px 0px 24px;
+  height: 100%;
+}
+
+.Pixso-paragraph-2_92,.Pixso-paragraph-2_115,.Pixso-paragraph-2_121,.Pixso-paragraph-2_139,.Pixso-paragraph-2_122,.Pixso-paragraph-2_131,.Pixso-paragraph-2_132,.Pixso-paragraph-2_133,.Pixso-paragraph-2_134,.Pixso-paragraph-2_136,.Pixso-paragraph-2_140,.Pixso-paragraph-2_142,.Pixso-paragraph-2_147,.Pixso-paragraph-2_152,.Pixso-paragraph-2_157,.Pixso-paragraph-2_161,.Pixso-paragraph-2_163,.Pixso-paragraph-2_169,.Pixso-paragraph-2_174,.Pixso-paragraph-2_177 {
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.Pixso-paragraph-2_92,.Pixso-paragraph-2_115,.Pixso-paragraph-2_121,.Pixso-paragraph-2_139,.Pixso-paragraph-2_122,.Pixso-paragraph-2_136,.Pixso-paragraph-2_140,.Pixso-paragraph-2_142,.Pixso-paragraph-2_147,.Pixso-paragraph-2_152,.Pixso-paragraph-2_157,.Pixso-paragraph-2_161,.Pixso-paragraph-2_163,.Pixso-paragraph-2_169,.Pixso-paragraph-2_174,.Pixso-paragraph-2_177 {
+  text-align: left;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-2_92 {
+  font-size: 13px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 0px;
+  color: var(--c-ink);
+}
+
+.Pixso-frame-2_93 {
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.Pixso-vector-2_94,.Pixso-vector-2_100,.Pixso-vector-2_106,.Pixso-vector-2_107,.Pixso-vector-2_108,.Pixso-vector-2_109,.Pixso-vector-2_112,.Pixso-vector-2_116,.Pixso-frame-2_128,.Pixso-frame-2_135 {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.Pixso-vector-2_94,.Pixso-vector-2_100 {
+  width: 15px;
+  height: 15px;
+}
+
+.Pixso-vector-2_94 {
+  background-image: url("assets/images/signal1.svg");
+}
+
+.Pixso-vector-2_100 {
+  background-image: url("assets/images/wifi1.svg");
+}
+
+.Pixso-frame-2_105 {
+  width: 20px;
+  height: 15px;
+}
+
+.Pixso-vector-2_106,.Pixso-vector-2_107,.Pixso-vector-2_108,.Pixso-vector-2_109 {
+  width: 6.25%;
+  height: 25%;
+  position: absolute;
+  top: 41.67%;
+  bottom: 33.33%;
+}
+
+.Pixso-vector-2_106 {
+  background-image: url("assets/images/Vector_2_106.svg");
+  left: 43.75%;
+  right: 50%;
+}
+
+.Pixso-vector-2_107 {
+  background-image: url("assets/images/Vector_2_107.svg");
+  left: 56.25%;
+  right: 37.5%;
+}
+
+.Pixso-vector-2_108 {
+  background-image: url("assets/images/Vector_2_108.svg");
+  left: 81.25%;
+  right: 12.5%;
+}
+
+.Pixso-vector-2_109 {
+  background-image: url("assets/images/Vector_2_109.svg");
+  left: 31.25%;
+  right: 62.5%;
+}
+
+.Pixso-rectangle-2_110 {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25px 1.25px 1.25px 1.25px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_110 {
+  position: absolute;
+  isolation: isolate;
+  left: 18.75%;
+  top: 25%;
+  right: 31.25%;
+  bottom: 25%;
+  width: 50%;
+  height: 50%;
+}
+
+.stroke-2_110,.stroke-2_126,.stroke-2_127,.stroke-2_129,.stroke-2_130,.stroke-2_144,.stroke-2_149,.stroke-2_154,.stroke-2_160,.stroke-2_175 {
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.stroke-2_110 {
+  position: absolute;
+  inset: -0.625px -0.625px -0.625px -0.625px;
+  border-radius: 1.25px 1.25px 1.25px 1.25px;
+  z-index: 1;
+  border-width: 1.25px 1.25px 1.25px 1.25px;
+  border-style: solid;
+  border-color: var(--c-ink);
+}
+
+.Pixso-frame-2_111 {
+  width: 100%;
+  height: 44px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Pixso-vector-2_112,.Pixso-vector-2_116 {
+  width: 18px;
+  height: 18px;
+}
+
+.Pixso-vector-2_112 {
+  background-image: url("assets/images/arrowleft1.svg");
+}
+
+.Pixso-paragraph-2_115 {
+  font-size: 13px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 3px;
+  color: var(--c-ink);
+}
+
+.Pixso-vector-2_116 {
+  background-image: url("assets/images/morehorizontal.svg");
+}
+
+.Pixso-frame-2_120,.Pixso-frame-2_137,.frame-content-2_120 {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.frame-content-2_120 {
+  gap: 8px;
+  padding: 12px 24px 0px 24px;
+}
+
+.Pixso-paragraph-2_121,.Pixso-paragraph-2_139 {
+  font-size: 10px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 3px;
+  color: var(--c-bamboo);
+}
+
+.Pixso-paragraph-2_122 {
+  font-size: 15px;
+  font-family: "Source Han Serif CN-Regular";
+  letter-spacing: 0px;
+  line-height: 159.99999%;
+  font-feature-settings: "locl" 0;
+  color: var(--c-ink);
+  width: 300px;
+}
+
+.Pixso-frame-2_123 {
+  width: 100%;
+  height: 1px;
+  background-color: var(--c-hairline);
+}
+
+.Pixso-frame-2_124,.frame-content-2_124 {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pixso-frame-2_124 {
+  flex-grow: 1;
+}
+
+.frame-content-2_124 {
+  gap: 12px;
+  height: 100%;
+}
+
+.Pixso-frame-2_125,.stroke-wrapper-2_126 {
+  width: 264px;
+  height: 264px;
+}
+
+.Pixso-frame-2_126 {
+  width: 100%;
+  height: 100%;
+  border-radius: 132px 132px 132px 132px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_126 {
+  position: absolute;
+  isolation: isolate;
+  left: 0px;
+  top: 0px;
+}
+
+.stroke-2_126 {
+  position: absolute;
+  inset: -0.5px -0.5px -0.5px -0.5px;
+  border-radius: 132px 132px 132px 132px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: rgba(46, 49, 47, 0.101961);
+}
+
+.Pixso-frame-2_127 {
+  width: 100%;
+  height: 100%;
+  border-radius: 106px 106px 106px 106px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_127 {
+  position: absolute;
+  isolation: isolate;
+  left: 26px;
+  top: 26px;
+  width: 212px;
+  height: 212px;
+}
+
+.stroke-2_127 {
+  position: absolute;
+  inset: -0.5px -0.5px -0.5px -0.5px;
+  border-radius: 106px 106px 106px 106px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-style: dashed;
+  border-color: rgba(46, 49, 47, 0.14902);
+}
+
+.Pixso-frame-2_128 {
+  width: 176px;
+  height: 176px;
+  position: absolute;
+  left: 44px;
+  top: 44px;
+  border-radius: 88px 88px 88px 88px;
+  box-shadow: 0px 10px 18px 0px rgba(46, 49, 47, 0.2) ;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20viewBox%3D'0%200%20176%20176'%20preserveAspectRatio%3D'none'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%0A%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3CradialGradient%20id%3D'grad'%20gradientUnits%3D'userSpaceOnUse'%20cx%3D'0'%20cy%3D'0'%20r%3D'1'%20gradientTransform%3D'matrix(-109.1200%2C%20-0.0000%2C%200.0000%2C%20-109.1200%2C%2070.4000%2C%2056.3200)'%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20stop-color%3D'rgba(217%2C194%2C148%2C1)'%20offset%3D'0'%2F%3E%3Cstop%20stop-color%3D'rgba(185%2C155%2C98%2C1)'%20offset%3D'0.5'%2F%3E%3Cstop%20stop-color%3D'rgba(124%2C101%2C64%2C1)'%20offset%3D'1'%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2FradialGradient%3E%0A%20%20%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%20%20%3Crect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'url(%23grad)'%2F%3E%0A%20%20%20%20%3C%2Fsvg%3E");
+  background-position: center;
+}
+
+.Pixso-frame-2_129 {
+  width: 100%;
+  height: 100%;
+  border-radius: 76px 76px 76px 76px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_129 {
+  position: absolute;
+  isolation: isolate;
+  left: 56px;
+  top: 56px;
+  width: 152px;
+  height: 152px;
+}
+
+.stroke-2_129 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 76px 76px 76px 76px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: rgba(89, 67, 31, 0.4);
+}
+
+.Pixso-frame-2_130 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: var(--c-paper);
+}
+
+.stroke-wrapper-2_130 {
+  position: absolute;
+  isolation: isolate;
+  left: 109px;
+  top: 109px;
+  width: 46px;
+  height: 46px;
+}
+
+.stroke-2_130 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 0px 0px 0px 0px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: rgba(89, 67, 31, 0.501961);
+}
+
+.Pixso-paragraph-2_131,.Pixso-paragraph-2_132,.Pixso-paragraph-2_133,.Pixso-paragraph-2_134 {
+  font-size: 17px;
+  font-family: "Source Han Serif CN-Medium";
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0px;
+  color: rgba(85, 63, 31, 1);
+  width: 32px;
+  height: 32px;
+  position: absolute;
+}
+
+.Pixso-paragraph-2_131 {
+  left: 116px;
+  top: 62px;
+}
+
+.Pixso-paragraph-2_132 {
+  left: 116px;
+  top: 148px;
+}
+
+.Pixso-paragraph-2_133 {
+  left: 164px;
+  top: 116px;
+}
+
+.Pixso-paragraph-2_134 {
+  left: 62px;
+  top: 116px;
+}
+
+.Pixso-frame-2_135 {
+  width: 92px;
+  height: 48px;
+  position: absolute;
+  left: 68px;
+  top: 64px;
+  border-radius: 24px 24px 24px 24px;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20viewBox%3D'0%200%2092%2048'%20preserveAspectRatio%3D'none'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%0A%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3ClinearGradient%20id%3D'grad'%20gradientUnits%3D'objectBoundingBox'%20x1%3D'0'%20y1%3D'0.5'%20x2%3D'1'%20y2%3D'0.5'%20gradientTransform%3D'matrix(-0.5736%2C%200.8192%2C%20-0.8192%2C%20-0.5736%2C%201.1964%2C%200.3772)'%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstop%20stop-color%3D'rgba(255%2C255%2C255%2C1)'%20offset%3D'0'%2F%3E%3Cstop%20stop-color%3D'rgba(255%2C255%2C255%2C0)'%20offset%3D'1'%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%20%20%3Crect%20width%3D'100%25'%20height%3D'100%25'%20fill%3D'url(%23grad)'%2F%3E%0A%20%20%20%20%3C%2Fsvg%3E");
+  background-position: center;
+  opacity: 0.45;
+}
+
+.Pixso-paragraph-2_136 {
+  font-size: 11px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 2px;
+  color: var(--c-ink-light);
+}
+
+.frame-content-2_137 {
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 14px 24px 0px 24px;
+  width: 100%;
+}
+
+.Pixso-frame-2_138 {
+  height: 16px;
+}
+
+.frame-content-2_138 {
+  height: 100%;
+}
+
+.Pixso-paragraph-2_140 {
+  font-size: 10px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 1px;
+  color: var(--c-ink-light);
+}
+
+.Pixso-frame-2_141,.Pixso-frame-2_146,.Pixso-frame-2_151,.Pixso-frame-2_156 {
+  width: 100%;
+  height: 24px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.frame-content-2_141,.frame-content-2_146,.frame-content-2_151,.frame-content-2_156 {
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Pixso-paragraph-2_142,.Pixso-paragraph-2_147,.Pixso-paragraph-2_152 {
+  font-size: 11px;
+  font-family: "Source Han Serif CN-Regular";
+  letter-spacing: 0px;
+  color: var(--c-ink-light);
+}
+
+.Pixso-frame-2_143,.Pixso-frame-2_148,.Pixso-frame-2_153,.Pixso-frame-2_158,.Pixso-frame-2_164,.Pixso-frame-2_170 {
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+.Pixso-frame-2_143,.Pixso-frame-2_148,.Pixso-frame-2_153,.Pixso-frame-2_158 {
+  width: 100%;
+  height: 24px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.frame-content-2_143,.frame-content-2_148,.frame-content-2_153,.frame-content-2_158 {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.Pixso-frame-2_144,.Pixso-frame-2_149,.Pixso-frame-2_154 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_144,.stroke-wrapper-2_149,.stroke-wrapper-2_154 {
+  isolation: isolate;
+  width: 148px;
+  height: 2px;
+}
+
+.stroke-2_144,.stroke-2_149,.stroke-2_154 {
+  position: absolute;
+  inset: -0.5px -0.5px -0.5px -0.5px;
+  border-radius: 0px 0px 0px 0px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-style: dashed;
+  border-color: var(--c-hairline);
+}
+
+.Pixso-frame-2_145,.Pixso-frame-2_150,.Pixso-frame-2_155 {
+  width: 24px;
+  height: 24px;
+}
+
+.Pixso-paragraph-2_157 {
+  font-size: 11px;
+  font-family: "Source Han Serif CN-Regular";
+  letter-spacing: 0px;
+  color: var(--c-cinnabar);
+}
+
+.Pixso-frame-2_159 {
+  width: 148px;
+  height: 4px;
+  border-radius: 1px 1px 1px 1px;
+  background-color: var(--c-cinnabar);
+}
+
+.Pixso-frame-2_160,.frame-content-2_160 {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pixso-frame-2_160 {
+  border-radius: 1px 1px 1px 1px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_160 {
+  isolation: isolate;
+  width: 20px;
+  height: 20px;
+}
+
+.stroke-2_160 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 1px 1px 1px 1px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: var(--c-cinnabar);
+}
+
+.Pixso-paragraph-2_161 {
+  font-size: 10px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 0px;
+  line-height: 100%;
+  color: var(--c-cinnabar);
+}
+
+.Pixso-frame-2_160-content-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.Pixso-frame-2_162,.Pixso-frame-2_168 {
+  width: 100%;
+  height: 24px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.frame-content-2_162,.frame-content-2_168 {
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Pixso-paragraph-2_163,.Pixso-paragraph-2_169 {
+  font-size: 11px;
+  font-family: "Source Han Serif CN-Regular";
+  letter-spacing: 0px;
+  color: var(--c-ink-mid);
+}
+
+.Pixso-frame-2_164,.frame-content-2_164 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 0;
+}
+
+.Pixso-frame-2_164,.Pixso-frame-2_170 {
+  height: 24px;
+  flex-grow: 1;
+}
+
+.frame-content-2_164,.frame-content-2_170 {
+  height: 100%;
+}
+
+.Pixso-frame-2_165,.Pixso-frame-2_166,.Pixso-frame-2_171 {
+  height: 4px;
+  background-color: var(--c-ink);
+}
+
+.Pixso-frame-2_165,.Pixso-frame-2_166 {
+  width: 62px;
+  border-radius: 1px 1px 1px 1px;
+}
+
+.Pixso-frame-2_167,.Pixso-frame-2_172 {
+  width: 24px;
+  height: 24px;
+}
+
+.Pixso-frame-2_170,.frame-content-2_170 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+.Pixso-frame-2_171 {
+  width: 148px;
+  border-radius: 1px 1px 1px 1px;
+}
+
+.Pixso-frame-2_173,.frame-content-2_173 {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.frame-content-2_173 {
+  gap: 12px;
+  padding: 16px 24px 28px 24px;
+}
+
+.Pixso-paragraph-2_174 {
+  font-size: 10px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 2px;
+  color: var(--c-ink-light);
+}
+
+.Pixso-frame-2_175,.frame-content-2_175 {
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pixso-frame-2_175 {
+  border-radius: 2px 2px 2px 2px;
+  z-index: 0;
+  background-color: var(--c-paper);
+}
+
+.frame-content-2_175 {
+  gap: 10px;
+}
+
+.stroke-wrapper-2_175 {
+  isolation: isolate;
+  width: 100%;
+  height: 54px;
+}
+
+.stroke-2_175 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 2px 2px 2px 2px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: var(--c-ink);
+}
+
+.Pixso-frame-2_176 {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px 3px 3px 3px;
+  background-color: var(--c-cinnabar);
+}
+
+.Pixso-paragraph-2_177 {
+  font-size: 15px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 4px;
+  color: var(--c-ink);
+}
+
+.Pixso-frame-2_175-content-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* ==========================================================
+   动态爻位列表（接线层新增，复用设计稿视觉变量）
+   ========================================================== */
+.sq-yao-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.sq-yao-row {
+  width: 100%;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+.sq-yao-label {
+  font-size: 11px;
+  font-family: "Source Han Serif CN-Regular";
+  color: var(--c-ink-light);
+  flex-shrink: 0;
+  width: 28px;
+}
+.sq-yao-figure-zone {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 0;
+}
+.sq-yao-line {
+  display: block;
+  height: 5px;
+  border-radius: 1px;
+  background: var(--c-ink);
+}
+.sq-yao-line.yang {
+  width: 64%;
+}
+.sq-yao-line.yin-wrap {
+  width: 64%;
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+}
+.sq-yao-line.yin-wrap span {
+  display: block;
+  width: 44%;
+  height: 5px;
+  border-radius: 1px;
+  background: var(--c-ink);
+}
+.sq-yao-line.empty {
+  width: 64%;
+  background: transparent;
+  border-top: 1px dashed var(--c-hairline);
+  height: 0;
+}
+.sq-yao-dong {
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: var(--c-cinnabar);
+  color: #f6f3eb;
+  font-size: 10px;
+  font-family: "Source Han Serif CN-Regular";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+.sq-yao-value {
+  font-size: 10px;
+  color: var(--c-ink-light);
+  flex-shrink: 0;
+  width: 20px;
+  text-align: right;
+}
+
+/* ==========================================================
+   摇卦页布局修正（接线层）：撑满手机壳并水平铺满
+   ========================================================== */
+.scroll-container .Pixso-frame-2_90 {
+  width: 100%;
+  height: 100vh;          /* 撑满视口（手机壳内） */
+  min-height: 720px;
+  max-height: 940px;      /* 超高屏时防止过度拉伸 */
+  align-items: stretch;
+  display: flex;
+  margin: 0 auto;
+}
+.scroll-container .Pixso-frame-2_90 > div {
+  width: 100%;            /* 三个区块水平铺满 */
+}
+/* 顶部问题区文字居中排布 */
+.scroll-container [id="2_92-zone"] {
+  text-align: center;
+  padding-top: 64px !important;
+}
+.scroll-container [id="2_94"] {
+  float: left;
+  margin-bottom: 0 !important;
+}
+
+/* 返回按钮绝对定位到左上角，不挤占居中标题 */
+.scroll-container [id="2_94"] {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  float: none !important;
+}
+
+/* ==========================================================
+   摇卦页 v2：开元通宝铜钱 + 设计稿对齐（对照 Pixso 2:90 截图）
+   ========================================================== */
+
+/* ---- 页头 ---- */
+.sq-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 58px 24px 0;
+}
+.sq-header-back, .sq-header-more {
+  font-size: 16px;
+  color: var(--c-ink);
+  width: 32px;
+  user-select: none;
+}
+.sq-header-more { letter-spacing: 2px; }
+.sq-header-title {
+  font-size: 15px;
+  font-family: "Source Han Serif CN-Regular";
+  letter-spacing: 6px;
+  color: var(--c-ink);
+}
+
+/* ---- 所问 ---- */
+.sq-ask { width: 100%; padding: 26px 24px 0; }
+.sq-ask-label {
+  font-size: 10px;
+  color: var(--c-ink-light);
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+.sq-ask-text {
+  font-size: 17px;
+  font-family: "Source Han Serif CN-Regular";
+  color: var(--c-ink);
+  letter-spacing: 1px;
+  line-height: 1.7;
+}
+.sq-ask-divider {
+  margin-top: 16px;
+  height: 1px;
+  background: var(--c-hairline);
+}
+
+/* ---- 铜钱舞台 ---- */
+.sq-coin-stage {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+}
+.sq-coin-ring {
+  width: 236px;
+  height: 236px;
+  border-radius: 50%;
+  border: 1px dashed var(--c-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sq-coin {
+  position: relative;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255,255,255,0.35), transparent 45%),
+    radial-gradient(circle at 50% 50%, #c9a96a 0%, var(--c-gold) 55%, #8a6d3b 100%);
+  box-shadow:
+    inset 0 0 0 6px rgba(138,109,59,0.35),
+    inset 0 0 22px rgba(90,70,35,0.4),
+    0 10px 26px rgba(90,74,40,0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 四字环排：上開 右通 下元 左寶（读法沿古制） */
+.sq-coin-char {
+  position: absolute;
+  font-family: "Source Han Serif CN-Regular";
+  font-size: 30px;
+  font-weight: 600;
+  color: #5f4a26;
+  text-shadow: 0 1px 0 rgba(255,235,200,0.4);
+}
+.sq-coin-char.top    { top: 12px;  left: 50%; transform: translateX(-50%); }
+.sq-coin-char.right  { right: 12px; top: 50%; transform: translateY(-50%); }
+.sq-coin-char.bottom { bottom: 10px; left: 50%; transform: translateX(-50%); }
+.sq-coin-char.left   { left: 12px;  top: 50%; transform: translateY(-50%); }
+/* 方孔 */
+.sq-coin-hole {
+  width: 44px;
+  height: 44px;
+  background: var(--c-paper);
+  border: 2px solid #8a6d3b;
+  box-shadow: inset 0 1px 4px rgba(90,70,35,0.45);
+}
+/* 旋转动画：水平面顺时针旋转（3D 透视，模拟钱在桌面上转动） */
+@keyframes sq-spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+.sq-coin-stage {
+  perspective: 700px;
+}
+.sq-coin.spinning {
+  animation: sq-spin 1.6s linear infinite;
+}
+.sq-coin-hint {
+  margin-top: 26px;
+  font-size: 11px;
+  color: var(--c-ink-light);
+  letter-spacing: 4px;
+  font-family: "Source Han Serif CN-Regular";
+}
+
+/* ---- 下部 ---- */
+.sq-bottom { width: 100%; padding: 0 24px 30px; }
+.sq-bottom-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--c-ink-light);
+  font-family: "Source Han Serif CN-Regular";
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.sq-pos-label {
+  text-align: center;
+  font-size: 12px;
+  color: var(--c-ink-mid);
+  font-family: "Source Han Serif CN-Regular";
+  letter-spacing: 3px;
+  margin: 24px 0 14px;
+}
+.sq-cast-btn-wrap { display: flex; justify-content: center; }
+.sq-cast-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--c-hairline);
+  background: var(--c-paper-tint);
+  color: var(--c-ink);
+  font-size: 14px;
+  font-family: "Source Han Serif CN-Regular";
+  padding: 15px 0;
+  letter-spacing: 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  touch-action: none;
+}
+.sq-cast-btn:disabled { cursor: default; background: var(--c-paper-deep); }
+.sq-cast-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c-cinnabar);
+  display: inline-block;
+}
+
+/* ---- 爻位行（对齐设计稿：标签灰、动爻朱砂、槽虚线） ---- */
+.sq-yao-label.moving { color: var(--c-cinnabar); }
+.sq-yao-line.moving {
+  width: 64%;
+  height: 4px;
+  background: var(--c-cinnabar);
+}

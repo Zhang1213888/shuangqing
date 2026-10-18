@@ -1,0 +1,520 @@
+
+.scroll-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.Pixso-frame-2_309 {
+  width: 100%;
+  height: 844px;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--c-paper);
+}
+
+.Pixso-frame-2_310,.frame-content-2_310,.frame-content-2_330,.Pixso-frame-2_343,.frame-content-2_343 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Pixso-frame-2_310 {
+  height: 62px;
+}
+
+.frame-content-2_310,.frame-content-2_330 {
+  padding: 0px 24px 0px 24px;
+  height: 100%;
+}
+
+.Pixso-paragraph-2_311,.Pixso-paragraph-2_334,.Pixso-paragraph-2_344,.Pixso-paragraph-2_378,.Pixso-paragraph-2_381,.Pixso-paragraph-2_347,.Pixso-paragraph-2_358,.Pixso-paragraph-2_359,.Pixso-paragraph-2_360,.Pixso-paragraph-2_361,.Pixso-paragraph-2_363,.Pixso-paragraph-2_364,.Pixso-paragraph-2_365,.Pixso-paragraph-2_367,.Pixso-paragraph-2_368,.Pixso-paragraph-2_369,.Pixso-paragraph-2_371,.Pixso-paragraph-2_373,.Pixso-paragraph-2_376,.Pixso-paragraph-2_379,.Pixso-paragraph-2_382,.Pixso-paragraph-2_384,.Pixso-paragraph-2_386,.Pixso-paragraph-2_391,.Pixso-paragraph-2_399 {
+  font-weight: 400;
+  text-align: left;
+  text-decoration: none;
+}
+
+.Pixso-paragraph-2_311 {
+  font-size: 13px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 0px;
+  color: var(--c-ink);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_312,.Pixso-frame-2_345 {
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.Pixso-vector-2_313,.Pixso-vector-2_319,.Pixso-vector-2_325,.Pixso-vector-2_326,.Pixso-vector-2_327,.Pixso-vector-2_328,.Pixso-vector-2_331,.Pixso-vector-2_335,.Pixso-vector-2_388,.Pixso-vector-2_394 {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.Pixso-vector-2_313,.Pixso-vector-2_319 {
+  width: 15px;
+  height: 15px;
+}
+
+.Pixso-vector-2_313 {
+  background-image: url("assets/images/signal.svg");
+}
+
+.Pixso-vector-2_319 {
+  background-image: url("assets/images/wifi.svg");
+}
+
+.Pixso-frame-2_324 {
+  width: 20px;
+  height: 15px;
+}
+
+.Pixso-vector-2_325,.Pixso-vector-2_326,.Pixso-vector-2_327,.Pixso-vector-2_328 {
+  width: 6.25%;
+  height: 25%;
+  position: absolute;
+  top: 41.67%;
+  bottom: 33.33%;
+}
+
+.Pixso-vector-2_325 {
+  background-image: url("assets/images/Vector_2_325.svg");
+  left: 43.75%;
+  right: 50%;
+}
+
+.Pixso-vector-2_326 {
+  background-image: url("assets/images/Vector_2_326.svg");
+  left: 56.25%;
+  right: 37.5%;
+}
+
+.Pixso-vector-2_327 {
+  background-image: url("assets/images/Vector_2_327.svg");
+  left: 81.25%;
+  right: 12.5%;
+}
+
+.Pixso-vector-2_328 {
+  background-image: url("assets/images/Vector_2_328.svg");
+  left: 31.25%;
+  right: 62.5%;
+}
+
+.Pixso-rectangle-2_329 {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25px 1.25px 1.25px 1.25px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_329 {
+  position: absolute;
+  isolation: isolate;
+  left: 18.75%;
+  top: 25%;
+  right: 31.25%;
+  bottom: 25%;
+  width: 50%;
+  height: 50%;
+}
+
+.stroke-2_329,.stroke-2_372,.stroke-2_383 {
+  pointer-events: none;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.stroke-2_329 {
+  position: absolute;
+  inset: -0.625px -0.625px -0.625px -0.625px;
+  border-radius: 1.25px 1.25px 1.25px 1.25px;
+  z-index: 1;
+  border-width: 1.25px 1.25px 1.25px 1.25px;
+  border-color: var(--c-ink);
+}
+
+.Pixso-frame-2_330 {
+  width: 100%;
+  height: 44px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Pixso-vector-2_331,.Pixso-vector-2_335 {
+  width: 18px;
+  height: 18px;
+}
+
+.Pixso-vector-2_331 {
+  background-image: url("assets/images/arrowleft.svg");
+}
+
+.Pixso-paragraph-2_334 {
+  font-size: 13px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 3px;
+  color: var(--c-ink);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-vector-2_335 {
+  background-image: url("assets/images/share2.svg");
+}
+
+.Pixso-frame-2_341,.frame-content-2_341,.Pixso-frame-2_342,.frame-content-2_342 {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Pixso-frame-2_341 {
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.frame-content-2_341 {
+  gap: 20px;
+  padding: 6px 24px 0px 24px;
+  height: 100%;
+}
+
+.frame-content-2_342,.frame-content-2_356 {
+  gap: 12px;
+}
+
+.Pixso-paragraph-2_344,.Pixso-paragraph-2_378,.Pixso-paragraph-2_381 {
+  font-size: 10px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 3px;
+  color: var(--c-bamboo);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_346 {
+  width: 5px;
+  height: 5px;
+  border-radius: 3px 3px 3px 3px;
+  background-color: var(--c-cinnabar);
+}
+
+.Pixso-paragraph-2_347 {
+  font-size: 10px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 1px;
+  color: var(--c-cinnabar);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_348,.frame-content-2_348 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.frame-content-2_348 {
+  gap: 18px;
+}
+
+.Pixso-frame-2_349,.frame-content-2_349 {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Pixso-frame-2_349 {
+  width: 54px;
+}
+
+.frame-content-2_349 {
+  gap: 7px;
+  width: 100%;
+}
+
+.Pixso-frame-2_350,.Pixso-frame-2_351,.Pixso-frame-2_352,.Pixso-frame-2_354,.Pixso-frame-2_355 {
+  width: 54px;
+  height: 4px;
+  background-color: var(--c-ink);
+}
+
+.Pixso-frame-2_353 {
+  width: 54px;
+  height: 4px;
+  background-color: var(--c-cinnabar);
+}
+
+.Pixso-frame-2_356,.frame-content-2_356 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.Pixso-frame-2_356 {
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.Pixso-frame-2_357,.Pixso-frame-2_362,.Pixso-frame-2_366 {
+  flex-direction: column;
+  align-items: center;
+}
+
+.Pixso-paragraph-2_358,.Pixso-paragraph-2_359,.Pixso-paragraph-2_360,.Pixso-paragraph-2_361,.Pixso-paragraph-2_363,.Pixso-paragraph-2_364,.Pixso-paragraph-2_365,.Pixso-paragraph-2_367,.Pixso-paragraph-2_368,.Pixso-paragraph-2_369 {
+  font-size: 19px;
+  font-family: "Source Han Serif CN-Regular";
+  letter-spacing: 0px;
+  line-height: 169.999993%;
+  color: var(--c-ink);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_370,.frame-content-2_370 {
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.frame-content-2_370 {
+  gap: 8px;
+}
+
+.Pixso-paragraph-2_371 {
+  font-size: 10px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 1px;
+  color: var(--c-ink-light);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_372,.frame-content-2_372 {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pixso-frame-2_372 {
+  border-radius: 1px 1px 1px 1px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_372 {
+  isolation: isolate;
+  width: 20px;
+  height: 20px;
+}
+
+.stroke-2_372 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 1px 1px 1px 1px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--c-cinnabar);
+}
+
+.Pixso-paragraph-2_373 {
+  font-size: 11px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 0px;
+  line-height: 100%;
+  color: var(--c-cinnabar);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_372-content-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.Pixso-frame-2_374 {
+  width: 100%;
+  height: 1px;
+  background-color: var(--c-hairline);
+}
+
+.Pixso-frame-2_375,.Pixso-frame-2_377,.Pixso-frame-2_380,.frame-content-2_375,.Pixso-frame-2_392,.frame-content-2_392 {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.frame-content-2_375 {
+  gap: 16px;
+}
+
+.Pixso-paragraph-2_376 {
+  font-size: 17px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 1px;
+  color: var(--c-ink);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.frame-content-2_377,.frame-content-2_380 {
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.Pixso-paragraph-2_379,.Pixso-paragraph-2_382 {
+  font-size: 13px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 0px;
+  line-height: 189.999998%;
+  color: var(--c-ink-mid);
+  width: 342px;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_383,.frame-content-2_383 {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Pixso-frame-2_383 {
+  height: 100%;
+  z-index: 1;
+}
+
+.frame-content-2_383 {
+  padding: 16px 0px 16px 0px;
+}
+
+.stroke-wrapper-2_383 {
+  isolation: isolate;
+  width: 100%;
+}
+
+.stroke-2_383 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 0px 0px 0px 0px;
+  z-index: 0;
+  border-width: 1px 0px 1px 0px;
+  border-color: var(--c-hairline);
+}
+
+.Pixso-paragraph-2_384 {
+  font-size: 16px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 3px;
+  color: var(--c-ink);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_385,.frame-content-2_385 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Pixso-paragraph-2_386 {
+  font-size: 11px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 2px;
+  color: var(--c-ink-light);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_387,.frame-content-2_387 {
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Pixso-frame-2_387 {
+  border-radius: 2px 2px 2px 2px;
+  background-color: rgba(237, 239, 233, 1);
+}
+
+.frame-content-2_387 {
+  gap: 10px;
+  padding: 12px 14px 12px 14px;
+}
+
+.Pixso-vector-2_388 {
+  width: 15px;
+  height: 15px;
+  background-image: url("assets/images/compass.svg");
+}
+
+.Pixso-paragraph-2_391 {
+  font-size: 11px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 0px;
+  line-height: 179.999995%;
+  font-feature-settings: "locl" 0;
+  color: var(--c-ink-mid);
+  width: 292px;
+  white-space: pre;
+}
+
+.Pixso-frame-2_392 {
+  height: 88px;
+  background-color: var(--c-paper);
+}
+
+.frame-content-2_392 {
+  padding: 12px 24px 24px 24px;
+  height: 100%;
+}
+
+.Pixso-frame-2_393,.frame-content-2_393 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pixso-frame-2_393 {
+  height: 52px;
+  border-radius: 2px 2px 2px 2px;
+  box-shadow: 0px 6px 14px 0px rgba(200, 60, 35, 0.14902) ;
+  background-color: var(--c-cinnabar);
+}
+
+.frame-content-2_393 {
+  gap: 9px;
+  height: 100%;
+}
+
+.Pixso-vector-2_394 {
+  width: 16px;
+  height: 16px;
+  background-image: url("assets/images/scrolltext.svg");
+}
+
+.Pixso-paragraph-2_399 {
+  font-size: 14px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 3px;
+  color: var(--c-paper);
+  white-space: pre;
+  flex-grow: 0;
+}

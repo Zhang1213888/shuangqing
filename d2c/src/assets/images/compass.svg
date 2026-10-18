@@ -1,0 +1,5 @@
+<svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15.000000" height="15.000000" fill="none" customFrame="#000000">
+	<rect id="compass" width="15.000000" height="15.000000" x="0.000000" y="0.000000" />
+	<circle id="椭圆 10" cx="7.5" cy="7.5" r="6.25" stroke="rgb(107,122,106)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.250000" />
+	<path id="矢量 66" d="M9.02248 8.23185C8.96111 8.41596 8.85772 8.58326 8.72049 8.72049C8.58326 8.85772 8.41596 8.96111 8.23185 9.02248L4.84998 10.15L5.97748 6.7681C6.03884 6.58399 6.14223 6.41669 6.27946 6.27946C6.41669 6.14223 6.58399 6.03884 6.7681 5.97748L10.15 4.84998L9.02248 8.23185Z" fill-rule="nonzero" stroke="rgb(107,122,106)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.250000" />
+</svg>

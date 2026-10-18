@@ -1,0 +1,752 @@
+
+.scroll-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.Pixso-frame-2_17 {
+  width: 100%;
+  height: 844px;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--c-paper);
+}
+
+.Pixso-frame-2_18,.frame-content-2_18,.frame-content-2_38 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Pixso-frame-2_18 {
+  height: 62px;
+}
+
+.frame-content-2_18,.frame-content-2_38 {
+  padding: 0px 24px 0px 24px;
+  height: 100%;
+}
+
+.Pixso-paragraph-2_19,.Pixso-paragraph-2_41,.Pixso-paragraph-2_42,.Pixso-paragraph-2_49,.Pixso-paragraph-2_53,.Pixso-paragraph-2_54,.Pixso-paragraph-2_55,.Pixso-paragraph-2_56,.Pixso-paragraph-2_58,.Pixso-paragraph-2_59,.Pixso-paragraph-2_60,.Pixso-paragraph-2_61,.Pixso-paragraph-2_63,.Pixso-paragraph-2_71,.Pixso-paragraph-2_72,.Pixso-paragraph-2_73,.Pixso-paragraph-2_74,.Pixso-paragraph-2_82,.Pixso-paragraph-2_83,.Pixso-paragraph-2_84,.Pixso-paragraph-2_85,.Pixso-paragraph-2_89 {
+  font-weight: 400;
+  text-align: left;
+  text-decoration: none;
+}
+
+.Pixso-paragraph-2_19 {
+  font-size: 13px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 0px;
+  color: var(--c-ink);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_20 {
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.Pixso-vector-2_21,.Pixso-vector-2_27 {
+  width: 15px;
+  height: 15px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.Pixso-vector-2_21 {
+  background-image: url("assets/images/signal2.svg");
+}
+
+.Pixso-vector-2_27 {
+  background-image: url("assets/images/wifi2.svg");
+}
+
+.Pixso-frame-2_32 {
+  width: 20px;
+  height: 15px;
+}
+
+.Pixso-vector-2_33,.Pixso-vector-2_34,.Pixso-vector-2_35,.Pixso-vector-2_36 {
+  width: 6.25%;
+  height: 25%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 41.67%;
+  bottom: 33.33%;
+}
+
+.Pixso-vector-2_33 {
+  background-image: url("assets/images/Vector_2_33.svg");
+  left: 43.75%;
+  right: 50%;
+}
+
+.Pixso-vector-2_34 {
+  background-image: url("assets/images/Vector_2_34.svg");
+  left: 56.25%;
+  right: 37.5%;
+}
+
+.Pixso-vector-2_35 {
+  background-image: url("assets/images/Vector_2_35.svg");
+  left: 81.25%;
+  right: 12.5%;
+}
+
+.Pixso-vector-2_36 {
+  background-image: url("assets/images/Vector_2_36.svg");
+  left: 31.25%;
+  right: 62.5%;
+}
+
+.Pixso-rectangle-2_37 {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25px 1.25px 1.25px 1.25px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_37 {
+  position: absolute;
+  isolation: isolate;
+  left: 18.75%;
+  top: 25%;
+  right: 31.25%;
+  bottom: 25%;
+  width: 50%;
+  height: 50%;
+}
+
+.stroke-2_37,.stroke-2_40,.stroke-2_44,.stroke-2_50,.stroke-2_64,.stroke-2_65,.stroke-2_66,.stroke-2_67,.stroke-2_70,.stroke-2_79,.stroke-2_81 {
+  pointer-events: none;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.stroke-2_37 {
+  position: absolute;
+  inset: -0.625px -0.625px -0.625px -0.625px;
+  border-radius: 1.25px 1.25px 1.25px 1.25px;
+  z-index: 1;
+  border-width: 1.25px 1.25px 1.25px 1.25px;
+  border-color: var(--c-ink);
+}
+
+.Pixso-frame-2_38,.Pixso-frame-2_39 {
+  flex-direction: row;
+  align-items: center;
+}
+
+.Pixso-frame-2_38 {
+  width: 100%;
+  height: 48px;
+  justify-content: space-between;
+}
+
+.Pixso-frame-2_39 {
+  gap: 10px;
+}
+
+.Pixso-frame-2_40,.frame-content-2_40 {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pixso-frame-2_40 {
+  border-radius: 2px 2px 2px 2px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_40 {
+  isolation: isolate;
+  width: 26px;
+  height: 26px;
+}
+
+.stroke-2_40 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 2px 2px 2px 2px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--c-cinnabar);
+}
+
+.Pixso-paragraph-2_41 {
+  font-size: 14px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 0px;
+  line-height: 100%;
+  color: var(--c-cinnabar);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_40-content-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.Pixso-paragraph-2_42 {
+  font-size: 12px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 4px;
+  color: var(--c-ink-mid);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_43 {
+  width: 18px;
+  height: 18px;
+}
+
+.Pixso-rectangle-2_44 {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75px 0.75px 0.75px 0.75px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_44 {
+  position: absolute;
+  isolation: isolate;
+  left: 8.33%;
+  top: 12.5%;
+  right: 8.33%;
+  bottom: 66.67%;
+  width: 83.34%;
+  height: 20.83%;
+}
+
+.stroke-2_44 {
+  position: absolute;
+  inset: -0.75px -0.75px -0.75px -0.75px;
+  border-radius: 0.75px 0.75px 0.75px 0.75px;
+  z-index: 1;
+  border-width: 1.5px 1.5px 1.5px 1.5px;
+  border-color: var(--c-ink-light);
+}
+
+.Pixso-vector-2_45,.Pixso-vector-2_46 {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.Pixso-vector-2_45 {
+  width: 75%;
+  height: 62.5%;
+  background-image: url("assets/images/Vector_2_45.svg");
+  left: 16.67%;
+  right: 8.33%;
+  top: 33.33%;
+  bottom: 4.17%;
+}
+
+.Pixso-vector-2_46 {
+  width: 25%;
+  height: 8.33%;
+  background-image: url("assets/images/Vector_2_46.svg");
+  left: 41.67%;
+  right: 33.33%;
+  top: 50%;
+  bottom: 41.67%;
+}
+
+.Pixso-frame-2_47,.frame-content-2_47 {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Pixso-frame-2_47 {
+  flex-grow: 1;
+}
+
+.frame-content-2_47 {
+  gap: 16px;
+  padding: 0px 24px 20px 24px;
+  height: 100%;
+}
+
+.Pixso-frame-2_48 {
+  width: 100%;
+  height: 20px;
+}
+
+.Pixso-paragraph-2_49 {
+  font-size: 11px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 6px;
+  color: var(--c-bamboo);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_50,.frame-content-2_50 {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pixso-frame-2_50 {
+  border-radius: 2px 2px 2px 2px;
+  z-index: 0;
+  background-color: var(--c-paper-deep);
+}
+
+.frame-content-2_50 {
+  padding: 22px 16px 22px 16px;
+}
+
+.stroke-wrapper-2_50 {
+  isolation: isolate;
+  width: 132px;
+  height: 212px;
+}
+
+.stroke-2_50 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 2px 2px 2px 2px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--c-hairline);
+}
+
+.Pixso-frame-2_51 {
+  flex-direction: row;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.Pixso-frame-2_52,.Pixso-frame-2_57 {
+  flex-direction: column;
+  align-items: center;
+}
+
+.Pixso-paragraph-2_53,.Pixso-paragraph-2_54,.Pixso-paragraph-2_55,.Pixso-paragraph-2_56,.Pixso-paragraph-2_58,.Pixso-paragraph-2_59,.Pixso-paragraph-2_60,.Pixso-paragraph-2_61 {
+  font-size: 17px;
+  font-family: "Source Han Serif CN-Regular";
+  letter-spacing: 0px;
+  line-height: 189.999998%;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-2_53,.Pixso-paragraph-2_54,.Pixso-paragraph-2_55,.Pixso-paragraph-2_56 {
+  color: var(--c-ink-light);
+}
+
+.Pixso-paragraph-2_58,.Pixso-paragraph-2_59,.Pixso-paragraph-2_60,.Pixso-paragraph-2_61 {
+  color: var(--c-ink);
+}
+
+.Pixso-frame-2_62 {
+  width: 2px;
+  height: 26px;
+  background-color: var(--c-cinnabar);
+}
+
+.Pixso-frame-2_50-content-layer,.Pixso-frame-2_64,.Pixso-frame-2_65,.Pixso-frame-2_66,.Pixso-frame-2_67,.Pixso-frame-2_70,.frame-content-2_70 {
+  width: 100%;
+  height: 100%;
+}
+
+.Pixso-frame-2_50-content-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.Pixso-paragraph-2_63 {
+  font-size: 11px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 2px;
+  color: var(--c-ink-light);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_64 {
+  overflow: hidden;
+  border-radius: 2px 2px 2px 2px;
+  z-index: 1;
+  background-color: var(--c-paper-deep);
+}
+
+.stroke-wrapper-2_64 {
+  isolation: isolate;
+  width: 342px;
+  height: 172px;
+}
+
+.stroke-2_64 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 2px 2px 2px 2px;
+  z-index: 0;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--c-hairline);
+}
+
+.Pixso-frame-2_65 {
+  border-radius: 110px 110px 110px 110px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_65 {
+  position: absolute;
+  isolation: isolate;
+  left: 140px;
+  top: -18px;
+  width: 220px;
+  height: 220px;
+}
+
+.stroke-2_65 {
+  position: absolute;
+  inset: -0.5px -0.5px -0.5px -0.5px;
+  border-radius: 110px 110px 110px 110px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-color: rgba(46, 49, 47, 0.121569);
+}
+
+.Pixso-frame-2_66 {
+  border-radius: 75px 75px 75px 75px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_66 {
+  position: absolute;
+  isolation: isolate;
+  left: 175px;
+  top: 17px;
+  width: 150px;
+  height: 150px;
+}
+
+.stroke-2_66 {
+  position: absolute;
+  inset: -0.5px -0.5px -0.5px -0.5px;
+  border-radius: 75px 75px 75px 75px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-color: rgba(46, 49, 47, 0.14902);
+}
+
+.Pixso-frame-2_67 {
+  border-radius: 42px 42px 42px 42px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_67 {
+  position: absolute;
+  isolation: isolate;
+  left: 208px;
+  top: 50px;
+  width: 84px;
+  height: 84px;
+}
+
+.stroke-2_67 {
+  position: absolute;
+  inset: -0.5px -0.5px -0.5px -0.5px;
+  border-radius: 42px 42px 42px 42px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-color: rgba(46, 49, 47, 0.2);
+}
+
+.Pixso-frame-2_68,.Pixso-frame-2_69 {
+  position: absolute;
+  background-color: rgba(46, 49, 47, 0.101961);
+}
+
+.Pixso-frame-2_68 {
+  width: 1px;
+  height: 230px;
+  left: 249px;
+  top: -20px;
+}
+
+.Pixso-frame-2_69 {
+  width: 250px;
+  height: 1px;
+  left: 134px;
+  top: 91px;
+}
+
+.Pixso-frame-2_70,.frame-content-2_70 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pixso-frame-2_70 {
+  border-radius: 1px 1px 1px 1px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_70 {
+  position: absolute;
+  isolation: isolate;
+  left: 22px;
+  top: 22px;
+  width: 20px;
+  height: 20px;
+}
+
+.stroke-2_70 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 1px 1px 1px 1px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--c-cinnabar);
+}
+
+.Pixso-paragraph-2_71 {
+  font-size: 11px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 0px;
+  line-height: 100%;
+  color: var(--c-cinnabar);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_70-content-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.Pixso-paragraph-2_72,.Pixso-paragraph-2_73,.Pixso-paragraph-2_74 {
+  position: absolute;
+}
+
+.Pixso-paragraph-2_72 {
+  font-size: 11px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 3px;
+  color: var(--c-ink-mid);
+  left: 52px;
+  top: 24px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-2_73 {
+  font-size: 23px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 1px;
+  color: var(--c-ink);
+  left: 22px;
+  top: 59px;
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-2_74 {
+  font-size: 12px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 0px;
+  line-height: 179.999995%;
+  color: var(--c-ink-mid);
+  width: 210px;
+  left: 22px;
+  top: 105px;
+}
+
+.Pixso-vector-2_75 {
+  width: 4.68%;
+  height: 9.3%;
+  background-image: url("assets/images/arrowupright.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 86.55%;
+  right: 8.77%;
+  top: 77.91%;
+  bottom: 12.79%;
+}
+
+.Pixso-frame-2_78,.frame-content-2_78 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.Pixso-frame-2_78 {
+  height: 152px;
+}
+
+.frame-content-2_78 {
+  height: 100%;
+}
+
+.Pixso-frame-2_79 {
+  width: 342px;
+  height: 172px;
+  overflow: hidden;
+  border-radius: 2px 2px 2px 2px;
+  z-index: 1;
+  background-color: var(--c-paper);
+}
+
+.stroke-wrapper-2_79 {
+  isolation: isolate;
+  width: 342px;
+  height: 172px;
+}
+
+.stroke-2_79 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 2px 2px 2px 2px;
+  z-index: 0;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--c-hairline);
+}
+
+.Pixso-frame-2_80 {
+  width: 342px;
+  height: 172px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-image: url("assets/images/11d3cf68926cc12896170655f340b9c262407949.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+}
+
+.Pixso-frame-2_81,.frame-content-2_81 {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pixso-frame-2_81 {
+  border-radius: 1px 1px 1px 1px;
+  z-index: 0;
+}
+
+.stroke-wrapper-2_81 {
+  position: absolute;
+  isolation: isolate;
+  left: 22px;
+  top: 22px;
+  width: 20px;
+  height: 20px;
+}
+
+.stroke-2_81 {
+  position: absolute;
+  inset: 0px;
+  border-radius: 1px 1px 1px 1px;
+  z-index: 1;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--c-bamboo);
+}
+
+.Pixso-paragraph-2_82 {
+  font-size: 11px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 0px;
+  line-height: 100%;
+  color: var(--c-bamboo);
+  white-space: pre;
+  flex-grow: 0;
+}
+
+.Pixso-frame-2_81-content-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.Pixso-paragraph-2_83,.Pixso-paragraph-2_84,.Pixso-paragraph-2_85 {
+  position: absolute;
+  white-space: pre;
+}
+
+.Pixso-paragraph-2_83 {
+  font-size: 11px;
+  font-family: "Source Han Sans CN-Medium";
+  letter-spacing: 3px;
+  color: var(--c-ink-mid);
+  left: 52px;
+  top: 24px;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-2_84 {
+  font-size: 23px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 1px;
+  color: var(--c-ink);
+  left: 22px;
+  top: 59px;
+  flex-grow: 0;
+}
+
+.Pixso-paragraph-2_85 {
+  font-size: 12px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 0px;
+  line-height: 179.999995%;
+  font-feature-settings: "locl" 0;
+  color: var(--c-ink-mid);
+  width: 236px;
+  left: 22px;
+  top: 105px;
+}
+
+.Pixso-vector-2_86 {
+  width: 5.33%;
+  height: 10.52%;
+  background-image: url("assets/images/arrowupright0.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 84.67%;
+  right: 10%;
+  top: 76.32%;
+  bottom: 13.16%;
+}
+
+.Pixso-paragraph-2_89 {
+  font-size: 10px;
+  font-family: "Source Han Sans CN-Regular";
+  letter-spacing: 1px;
+  color: var(--c-ink-light);
+  white-space: pre;
+  flex-grow: 0;
+}
