@@ -941,7 +941,7 @@
 }
 
 /* ---- 下部 ---- */
-.sq-bottom { width: 100%; padding: 0 24px 30px; }
+.sq-bottom { width: 100%; padding: 0 24px 0 30px; }
 .sq-bottom-head {
   display: flex;
   justify-content: space-between;
