@@ -50,10 +50,6 @@ const Frame217 = () => {
                     className="Pixso-frame-2_47 pixso-relative-no-shrink pixso-flex-auto-height"
                 >
                     <div className="frame-content-2_47 pixso-relative-flex">
-                        <div
-                            id="2_48"
-                            className="Pixso-frame-2_48 pixso-relative-no-shrink"
-                        ></div>
                         <p
                             id="2_49"
                             className="Pixso-paragraph-2_49 pixso-relative-auto-size pixso-flex-shrink-0"
