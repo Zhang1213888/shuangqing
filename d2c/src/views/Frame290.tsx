@@ -125,7 +125,11 @@ const Frame290 = () => {
         {/* 中部：外环 + 铜钱（起卦旋转）+ 提示 */}
         <div className="sq-coin-stage">
           <div className="sq-coin-ring">
-            <div className={"sq-coin" + (casting ? " spinning" : "") + (landing ? " landing" : "")}>
+            <div
+              className={"sq-coin" + (casting ? " spinning" : "") + (landing ? " landing" : "") + (n >= 6 || submitting ? " disabled" : "")}
+              onClick={() => { if (!(n >= 6 || submitting || casting)) handleToss(); }}
+              style={{ cursor: n >= 6 || submitting || casting ? "default" : "pointer" }}
+            >
               <span className="sq-coin-char top">開</span>
               <span className="sq-coin-char right">通</span>
               <span className="sq-coin-char bottom">元</span>
@@ -152,18 +156,6 @@ const Frame290 = () => {
           </div>
 
           <p className="sq-pos-label">{posLabel}</p>
-
-          <div className="sq-cast-btn-wrap">
-            <button
-              id="2_175"
-              className="sq-cast-btn"
-              onClick={handleToss}
-              disabled={n >= 6 || submitting || casting}
-            >
-              <i className="sq-cast-dot" />
-              {submitting ? "推演中…" : n >= 6 ? "卦象已成" : "轻触起卦"}
-            </button>
-          </div>
         </div>
       </div>
     </div>

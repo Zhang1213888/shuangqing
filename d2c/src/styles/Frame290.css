@@ -967,32 +967,7 @@
   letter-spacing: 3px;
   margin: 24px 0 14px;
 }
-.sq-cast-btn-wrap { display: flex; justify-content: center; }
-.sq-cast-btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  border: 1px solid var(--c-hairline);
-  background: var(--c-paper-tint);
-  color: var(--c-ink);
-  font-size: 14px;
-  font-family: "Source Han Serif CN-Regular";
-  padding: 15px 0;
-  letter-spacing: 6px;
-  border-radius: 2px;
-  cursor: pointer;
-  touch-action: none;
-}
-.sq-cast-btn:disabled { cursor: default; background: var(--c-paper-deep); }
-.sq-cast-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--c-cinnabar);
-  display: inline-block;
-}
+.sq-coin.disabled { opacity: 0.5; pointer-events: none; }
 
 /* ---- 爻位行（对齐设计稿：标签灰、动爻朱砂、槽虚线） ---- */
 .sq-yao-label.moving { color: var(--c-cinnabar); }
