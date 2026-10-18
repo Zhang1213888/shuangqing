@@ -13,9 +13,7 @@
   transform: translateX(-50%);
   width: 100%;
   max-width: 390px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--c-paper);
@@ -281,11 +279,12 @@
 
 .Pixso-frame-2_47 {
   flex-grow: 1;
+  min-height: 0;
 }
 
 .frame-content-2_47 {
-  gap: 34px;
-  padding: 24px 24px 20px 24px;
+  gap: clamp(12px, 5vh, 34px);
+  padding: clamp(10px, 3vh, 24px) 24px clamp(10px, 2.5vh, 20px) 24px;
   height: 100%;
 }
 
@@ -399,8 +398,9 @@
 
 .stroke-wrapper-2_64 {
   isolation: isolate;
-  width: 342px;
-  height: 200px;
+  width: 100%;
+  max-width: 342px;
+  height: clamp(140px, 26vh, 200px);
   perspective: 1000px;
   transform-style: preserve-3d;
   animation: border-flow-gold 5s ease-in-out infinite;
@@ -667,8 +667,9 @@
 
 .stroke-wrapper-2_79 {
   isolation: isolate;
-  width: 342px;
-  height: 200px;
+  width: 100%;
+  max-width: 342px;
+  height: clamp(140px, 26vh, 200px);
   perspective: 1000px;
   transform-style: preserve-3d;
   animation: border-flow-bamboo 5s ease-in-out infinite;
