@@ -1,14 +1,19 @@
 
 .scroll-container {
   height: 100%;
+  min-height: 0;
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .Pixso-frame-2_90 {
   width: 100%;
-  height: 844px;
-  overflow: hidden;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--c-paper);
@@ -776,10 +781,7 @@
    ========================================================== */
 .scroll-container .Pixso-frame-2_90 {
   width: 100%;
-  height: 100vh;          /* 撑满视口（手机壳内） */
-  height: 100dvh;
-  min-height: 720px;
-  max-height: 940px;      /* 超高屏时防止过度拉伸 */
+  height: 100%;
   align-items: stretch;
   display: flex;
   margin: 0 auto;
@@ -831,7 +833,7 @@
 }
 
 /* ---- 所问 ---- */
-.sq-ask { width: 100%; padding: 26px 24px 0; }
+.sq-ask { width: 100%; padding: 16px 24px 0; }
 .sq-ask-label {
   font-size: 10px;
   color: var(--c-ink-light);
