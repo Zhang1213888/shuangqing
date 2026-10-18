@@ -649,35 +649,40 @@ const Frame2178 = () => {
                                 </div>
                                 <div
                                     id="2_297"
-                                    className="Pixso-frame-2_297 pixso-relative-no-shrink pixso-flex-auto-height"
+                                    className="stroke-wrapper-2_297 pixso-relative-no-shrink pixso-flex-auto-height"
                                 >
-                                    <div className="frame-content-2_297 pixso-relative-flex">
-                                        <div
-                                            id="2_298"
-                                            className="Pixso-frame-2_298 pixso-relative-no-shrink pixso-flex-auto-height"
-                                        >
-                                            <div className="frame-content-2_298 pixso-relative-flex">
-                                                <p
-                                                    id="2_299"
-                                                    className="Pixso-paragraph-2_299 pixso-relative-auto-size pixso-flex-shrink-0"
-                                                >
-                                                    {"三"}
-                                                </p>
-                                                <p
-                                                    id="2_300"
-                                                    className="Pixso-paragraph-2_300 pixso-relative-auto-size pixso-flex-shrink-0"
-                                                >
-                                                    {"应期时间"}
-                                                </p>
-                                                <p
-                                                    id="2_301"
-                                                    className="Pixso-paragraph-2_301 pixso-relative-auto-size pixso-flex-shrink-0"
-                                                >
-                                                    {r?.report?.timing ?? ''}
-                                                </p>
+                                    <div className="Pixso-frame-2_297 pixso-relative-no-shrink pixso-flex">
+                                        <div className="frame-content-2_297 pixso-relative-flex">
+                                            <div
+                                                id="2_298"
+                                                className="Pixso-frame-2_298 pixso-relative-no-shrink pixso-flex-auto-height"
+                                            >
+                                                <div className="frame-content-2_298 pixso-relative-flex">
+                                                    <p
+                                                        id="2_299"
+                                                        className="Pixso-paragraph-2_299 pixso-relative-auto-size pixso-flex-shrink-0"
+                                                    >
+                                                        {"三"}
+                                                    </p>
+                                                    <p
+                                                        id="2_300"
+                                                        className="Pixso-paragraph-2_300 pixso-relative-auto-size pixso-flex-shrink-0"
+                                                    >
+                                                        {"应期时间"}
+                                                    </p>
+                                                </div>
                                             </div>
+                                            <p
+                                                id="2_301"
+                                                className="Pixso-paragraph-2_301 pixso-relative-no-shrink pixso-h-auto"
+                                            >
+                                                {
+                                                    r?.report?.timing ?? ''
+                                                }
+                                            </p>
                                         </div>
                                     </div>
+                                    <div className="stroke-2_297"></div>
                                 </div>
                             </div>
                         </div>

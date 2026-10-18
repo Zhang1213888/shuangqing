@@ -10,50 +10,6 @@ const Frame217 = () => {
                 id="2_17"
                 className="Pixso-frame-2_17 pixso-relative-no-shrink pixso-flex"
             >
-                                <div
-                    id="2_38"
-                    className="Pixso-frame-2_38 pixso-relative-no-shrink pixso-flex"
-                >
-                    <div
-                        id="2_39"
-                        className="Pixso-frame-2_39 pixso-relative-flex-auto-size pixso-flex-shrink-0"
-                    >
-                        <div
-                            id="2_40"
-                            className="stroke-wrapper-2_40 pixso-relative-no-shrink pixso-flex"
-                        >
-                            <div className="Pixso-frame-2_40 pixso-relative-no-shrink pixso-flex"></div>
-                            <div className="stroke-2_40"></div>
-                            <div className="Pixso-frame-2_40-content-layer">
-                                <div className="frame-content-2_40 pixso-relative-flex">
-                                    <p
-                                        id="2_41"
-                                        className="Pixso-paragraph-2_41 pixso-relative-auto-size pixso-flex-shrink-0"
-                                    >
-                                        {"易"}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <p
-                            id="2_42"
-                            className="Pixso-paragraph-2_42 pixso-relative-auto-size pixso-flex-shrink-0"
-                        >
-                            {"双擎易学"}
-                        </p>
-                    </div>
-                    <div
-                        id="2_43"
-                        className="Pixso-frame-2_43 pixso-relative-no-shrink"
-                    >
-                        <div id="2_44" className="stroke-wrapper-2_44">
-                            <div className="Pixso-rectangle-2_44 pixso-position-relative"></div>
-                            <div className="stroke-2_44"></div>
-                        </div>
-                        <div id="2_45" className="Pixso-vector-2_45"></div>
-                        <div id="2_46" className="Pixso-vector-2_46"></div>
-                    </div>
-                </div>
                 <div
                     id="2_47"
                     className="Pixso-frame-2_47 pixso-relative-no-shrink pixso-flex-auto-height"
@@ -229,6 +185,7 @@ const Frame217 = () => {
                             className="stroke-wrapper-2_79 pixso-relative-no-shrink"
                         >
                             <div className="Pixso-frame-2_79 pixso-relative-no-shrink">
+                                <div className="taiji-symbol"></div>
                                 <div
                                     id="2_80"
                                     className="Pixso-frame-2_80"

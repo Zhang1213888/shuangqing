@@ -51,16 +51,17 @@ const Frame290 = () => {
       const tosses = [...cur.tosses, v];
       setCasting(false);
       if (tosses.length === 6) {
+        update({ ...cur, tosses });
         setSubmitting(true);
         try {
           let result = await castApi({
             mode: cur.mode,
-            question: "惟精惟一，心中默念所求之事",
+            question: cur.question || "惟精惟一，心中默念所求之事",
             timestamp: Date.now(),
             tosses: tosses as [number, number, number, number, number, number],
           });
           try {
-            result = await interpretApi(result, "惟精惟一，心中默念所求之事");
+            result = await interpretApi(result, cur.question || "惟精惟一，心中默念所求之事");
           } catch (e) {
             console.warn("interpret 降级为引擎文案", e);
           }
@@ -68,9 +69,8 @@ const Frame290 = () => {
           navigate(cur.mode === "NAJIA" ? "/najia" : "/zhouyi");
         } catch (e) {
           console.error(e);
-          update({ ...cur, tosses });
+          setSubmitting(false);
         }
-        setSubmitting(false);
       } else {
         update({ ...cur, tosses });
       }

@@ -156,6 +156,7 @@ body {
   width: 100%;
   max-width: 390px;           /* 设计稿画板宽度 */
   min-height: 100vh;
+  min-height: 100dvh;
   background: var(--c-paper);
   position: relative;
   overflow-x: hidden;
@@ -165,6 +166,7 @@ body {
 @media (min-width: 480px) {
   .scroll-container {
     min-height: 100vh;
+    min-height: 100dvh;
     box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 24px 80px rgba(0,0,0,0.55);
   }
 }

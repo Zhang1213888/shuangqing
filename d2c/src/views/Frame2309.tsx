@@ -106,19 +106,9 @@ const Frame2309 = () => {
                                             className="Pixso-frame-2_356 pixso-relative-flex pixso-h-auto"
                                         >
                                             <div className="frame-content-2_356 pixso-relative-flex">
-                                                {(() => {
-                                                  const txt = r?.focusLine?.original ?? '自強不息';
-                                                  const chars = Array.from(txt);
-                                                  const cols = [[],[],[]];
-                                                  chars.forEach((ch, i) => cols[i % 3].push(ch));
-                                                  return cols.map((col, ci) => (
-                                                    <div key={ci} className="Pixso-frame-2_357 pixso-relative-flex-auto-size pixso-flex-shrink-0">
-                                                      {col.map((ch, ji) => (
-                                                        <p key={ji} className="Pixso-paragraph-2_358 pixso-relative-auto-size pixso-flex-shrink-0">{ch}</p>
-                                                      ))}
-                                                    </div>
-                                                  ));
-                                                })()}
+                                                <p style={{ writingMode: 'horizontal-tb', fontSize: 14, lineHeight: 1.8, letterSpacing: 2, textAlign: 'center', width: '100%' }}>
+                                                  {r?.focusLine?.original ?? '自強不息'}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

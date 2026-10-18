@@ -1,13 +1,18 @@
 
 .scroll-container {
   height: 100%;
+  min-height: 0;
   width: 100%;
-  overflow: auto;
 }
 
 .Pixso-frame-2_178 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  height: 844px;
+  max-width: 390px;
   overflow: hidden;
   flex-direction: column;
   align-items: flex-start;
@@ -124,7 +129,7 @@
   height: 50%;
 }
 
-.stroke-2_198,.stroke-2_211,.stroke-2_226,.stroke-2_234,.stroke-2_236,.stroke-2_244,.stroke-2_246,.stroke-2_253,.stroke-2_255,.stroke-2_262,.stroke-2_264,.stroke-2_272,.stroke-2_274,.stroke-2_281,.stroke-2_283,.stroke-2_287,.stroke-2_292,.stroke-2_302,.stroke-2_303 {
+.stroke-2_198,.stroke-2_211,.stroke-2_226,.stroke-2_234,.stroke-2_236,.stroke-2_244,.stroke-2_246,.stroke-2_253,.stroke-2_255,.stroke-2_262,.stroke-2_264,.stroke-2_272,.stroke-2_274,.stroke-2_281,.stroke-2_283,.stroke-2_287,.stroke-2_292,.stroke-2_297,.stroke-2_302,.stroke-2_303 {
   pointer-events: none;
   border-style: solid;
   box-sizing: border-box;
@@ -176,14 +181,23 @@
 }
 
 .Pixso-frame-2_210 {
-  overflow: hidden;
+  overflow: visible;
   flex-grow: 1;
+  min-height: 0;
 }
 
 .frame-content-2_210 {
   gap: 10px;
   padding: 4px 24px 0px 24px;
   height: 100%;
+  flex-wrap: nowrap;
+}
+
+[id="2_286"] {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  flex-shrink: 1;
 }
 
 .Pixso-frame-2_211,.frame-content-2_211 {
@@ -945,7 +959,7 @@
   padding: 10px 14px 10px 14px;
 }
 
-.stroke-wrapper-2_283,.stroke-wrapper-2_287,.stroke-wrapper-2_292 {
+.stroke-wrapper-2_283,.stroke-wrapper-2_287,.stroke-wrapper-2_292,.stroke-wrapper-2_297 {
   isolation: isolate;
   width: 100%;
 }
@@ -986,7 +1000,7 @@
   padding: 8px 0px 8px 0px;
 }
 
-.stroke-2_287,.stroke-2_292 {
+.stroke-2_287,.stroke-2_292,.stroke-2_297 {
   position: absolute;
   inset: 0px;
   border-radius: 0px 0px 0px 0px;
@@ -1026,7 +1040,7 @@
   white-space: pre;
 }
 
-.Pixso-paragraph-2_291,.Pixso-paragraph-2_296 {
+.Pixso-paragraph-2_291,.Pixso-paragraph-2_296,.Pixso-paragraph-2_301 {
   font-size: 12px;
   font-family: "Source Han Sans CN-Regular";
   text-align: left;
@@ -1040,17 +1054,8 @@
   flex-direction: column;
   gap: 5px;
   align-items: flex-start;
-  padding: 8px 0px 2px 0px;
+  padding: 8px 0px 8px 0px;
   width: 100%;
-}
-
-.Pixso-paragraph-2_301 {
-  font-size: 12px;
-  font-family: "Source Han Serif CN-Medium";
-  text-align: left;
-  letter-spacing: 0px;
-  color: var(--c-cinnabar);
-  white-space: pre;
 }
 
 .Pixso-frame-2_302,.frame-content-2_302 {

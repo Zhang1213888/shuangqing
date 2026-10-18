@@ -277,8 +277,8 @@
 }
 
 .frame-content-2_47 {
-  gap: 16px;
-  padding: 0px 24px 20px 24px;
+  gap: 24px;
+  padding: 24px 24px 20px 24px;
   height: 100%;
 }
 
@@ -393,7 +393,28 @@
 .stroke-wrapper-2_64 {
   isolation: isolate;
   width: 342px;
-  height: 172px;
+  height: 200px;
+  animation: card-pulse 3s ease-in-out infinite;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.stroke-wrapper-2_64:hover {
+  animation: card-pulse 1.5s ease-in-out infinite, float-hover 2s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(201, 164, 75, 0.25), 0 0 60px rgba(201, 164, 75, 0.08);
+}
+
+.stroke-wrapper-2_64:hover .stroke-2_64 {
+  animation-duration: 2s;
+}
+
+.stroke-wrapper-2_64:hover .Pixso-frame-2_64 {
+  background-color: rgba(46, 49, 47, 0.92);
+}
+
+.stroke-wrapper-2_64:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
 }
 
 .stroke-2_64 {
@@ -401,8 +422,13 @@
   inset: 0px;
   border-radius: 2px 2px 2px 2px;
   z-index: 0;
-  border-width: 1px 1px 1px 1px;
-  border-color: var(--c-hairline);
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #c9a44b, #f2d98b, #c47f5a, #a07828, #c9a44b) border-box;
+  background-size: 400% 400%;
+  animation: border-flow 5s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
 }
 
 .Pixso-frame-2_65 {
@@ -424,8 +450,13 @@
   inset: -0.5px -0.5px -0.5px -0.5px;
   border-radius: 110px 110px 110px 110px;
   z-index: 1;
-  border-width: 1px 1px 1px 1px;
-  border-color: rgba(46, 49, 47, 0.121569);
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #c9a44b, #f2d98b, #a07828, #c9a44b) border-box;
+  background-size: 300% 300%;
+  animation: rotate-glow-outer 6s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
 }
 
 .Pixso-frame-2_66 {
@@ -447,8 +478,13 @@
   inset: -0.5px -0.5px -0.5px -0.5px;
   border-radius: 75px 75px 75px 75px;
   z-index: 1;
-  border-width: 1px 1px 1px 1px;
-  border-color: rgba(46, 49, 47, 0.14902);
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #c47f5a, #f2c0a8, #8b4528, #c47f5a) border-box;
+  background-size: 300% 300%;
+  animation: rotate-glow-mid 4s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
 }
 
 .Pixso-frame-2_67 {
@@ -470,8 +506,13 @@
   inset: -0.5px -0.5px -0.5px -0.5px;
   border-radius: 42px 42px 42px 42px;
   z-index: 1;
-  border-width: 1px 1px 1px 1px;
-  border-color: rgba(46, 49, 47, 0.2);
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #5a86c4, #a8c8f2, #284a8b, #5a86c4) border-box;
+  background-size: 300% 300%;
+  animation: rotate-glow-inner 3s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
 }
 
 .Pixso-frame-2_68,.Pixso-frame-2_69 {
@@ -607,7 +648,7 @@
 
 .Pixso-frame-2_79 {
   width: 342px;
-  height: 172px;
+  height: 200px;
   overflow: hidden;
   border-radius: 2px 2px 2px 2px;
   z-index: 1;
@@ -617,7 +658,32 @@
 .stroke-wrapper-2_79 {
   isolation: isolate;
   width: 342px;
-  height: 172px;
+  height: 200px;
+  animation: card-pulse-right 3s ease-in-out infinite;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.stroke-wrapper-2_79:hover {
+  animation: card-pulse-right 1.5s ease-in-out infinite, float-hover 2s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(90, 134, 196, 0.25), 0 0 60px rgba(90, 134, 196, 0.08);
+}
+
+.stroke-wrapper-2_79:hover .stroke-2_79 {
+  animation-duration: 2s;
+}
+
+.stroke-wrapper-2_79:hover .Pixso-frame-2_79 {
+  background-color: rgba(46, 49, 47, 0.08);
+}
+
+.stroke-wrapper-2_79:hover .taiji-symbol {
+  animation-duration: 8s;
+}
+
+.stroke-wrapper-2_79:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
 }
 
 .stroke-2_79 {
@@ -625,13 +691,18 @@
   inset: 0px;
   border-radius: 2px 2px 2px 2px;
   z-index: 0;
-  border-width: 1px 1px 1px 1px;
-  border-color: var(--c-hairline);
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #5a86c4, #a8c8f2, #7a9ec4, #284a8b, #5a86c4) border-box;
+  background-size: 400% 400%;
+  animation: border-flow 5s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
 }
 
 .Pixso-frame-2_80 {
   width: 342px;
-  height: 172px;
+  height: 200px;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -749,4 +820,91 @@
   color: var(--c-ink-light);
   white-space: pre;
   flex-grow: 0;
+}
+
+/* ---- 流动渐变动画 ---- */
+@keyframes rotate-glow-outer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes rotate-glow-mid {
+  0% { background-position: 100% 0%; }
+  50% { background-position: 0% 100%; }
+  100% { background-position: 100% 0%; }
+}
+
+@keyframes rotate-glow-inner {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+
+@keyframes border-flow {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes card-pulse {
+  0%, 100% { box-shadow: 0 0 4px rgba(201, 164, 75, 0.15), 0 0 12px rgba(201, 164, 75, 0.05); }
+  50% { box-shadow: 0 0 8px rgba(201, 164, 75, 0.30), 0 0 20px rgba(201, 164, 75, 0.10); }
+}
+
+@keyframes card-pulse-right {
+  0%, 100% { box-shadow: 0 0 4px rgba(90, 134, 196, 0.15), 0 0 12px rgba(90, 134, 196, 0.05); }
+  50% { box-shadow: 0 0 8px rgba(90, 134, 196, 0.30), 0 0 20px rgba(90, 134, 196, 0.10); }
+}
+
+/* ---- 太极图 ---- */
+.taiji-symbol {
+  position: absolute;
+  right: 8px;
+  top: 32px;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #2d2b26 50%, #f5efe0 50%);
+  animation: taiji-spin 20s linear infinite;
+  z-index: 0;
+}
+.taiji-symbol::before {
+  content: '';
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #f5efe0 16px, #2d2b26 16px);
+}
+.taiji-symbol::after {
+  content: '';
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #2d2b26 16px, #f5efe0 16px);
+}
+
+@keyframes taiji-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ---- 卡片悬浮动画 ---- */
+@keyframes float-card {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-8px) scale(1); }
+}
+@keyframes float-hover {
+  0%, 100% { transform: scale(1.04) translateY(-3px); }
+  50% { transform: scale(1.04) translateY(-12px); }
 }

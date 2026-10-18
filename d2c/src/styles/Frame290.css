@@ -777,6 +777,7 @@
 .scroll-container .Pixso-frame-2_90 {
   width: 100%;
   height: 100vh;          /* 撑满视口（手机壳内） */
+  height: 100dvh;
   min-height: 720px;
   max-height: 940px;      /* 超高屏时防止过度拉伸 */
   align-items: stretch;
