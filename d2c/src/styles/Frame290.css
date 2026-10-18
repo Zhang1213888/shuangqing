@@ -918,6 +918,18 @@
 .sq-coin.spinning {
   animation: sq-spin 1.6s linear infinite;
 }
+
+/* 落子暂停：重力下坠弹簧缓动 */
+@keyframes sq-land {
+  0%   { transform: translateY(-12px) scale(1.06); opacity: 0.7; }
+  30%  { transform: translateY(8px) scale(0.94); }
+  55%  { transform: translateY(-3px) scale(0.98); }
+  75%  { transform: translateY(2px); }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+.sq-coin.landing {
+  animation: sq-land 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
 .sq-coin-hint {
   margin-top: 26px;
   font-size: 11px;
@@ -936,6 +948,16 @@
   font-family: "Source Han Serif CN-Regular";
   letter-spacing: 2px;
   margin-bottom: 16px;
+}
+
+/* 水墨晕染淡入：已成 N/6 */
+@keyframes ink-fade {
+  0%   { opacity: 0; transform: scale(0.92); filter: blur(3px); }
+  60%  { opacity: 1; transform: scale(1.02); filter: blur(0); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+.sq-counter-ink {
+  animation: ink-fade 0.55s ease-out;
 }
 .sq-pos-label {
   text-align: center;

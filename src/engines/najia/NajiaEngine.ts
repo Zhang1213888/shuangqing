@@ -232,11 +232,17 @@ export function najiaCast(req: CastRequest): NajiaResult {
       liushen: l.liushen,
       liuqin: l.liuqin,
       ganzhi: l.ganzhi,
+      dizhi: l.dizhi,
+      wuxing: l.wuxing,
       tags: l.tags,
       isYongshen: l.tags.includes('用神'),
       isMoving: l.isMoving,
       kind: l.kind,
     })),
+    lineRelations: Object.fromEntries(lines.map((l) => [l.index, {
+      yuejian: formatRelation(`月建${calendar.yuejian}`, calendar.yuejianWuxing, `${l.liuqin}${l.ganzhi}`, l.wuxing),
+      richen: formatRelation(`日辰${calendar.richen}`, calendar.richenWuxing, `${l.liuqin}${l.ganzhi}`, l.wuxing),
+    }])),
     tooltip: {
       title: yongshenLine ? `用神：${yongshenLine.liuqin}${yongshenLine.ganzhi}` : `用神不现，看${yongshenLiuqin}伏藏`,
       content: tooltipText(yongshenLine, yongshenLiuqin, analysis),
@@ -253,6 +259,17 @@ export function najiaCast(req: CastRequest): NajiaResult {
 }
 
 /** 生克状态汇总 */
+function formatRelation(sourceName: string, selfWx: WuXing, targetName: string, targetWx: WuXing): string {
+  const rel = shengKe(selfWx, targetWx);
+  switch (rel) {
+    case '同我': return `${sourceName}与${targetName}比和帮扶`;
+    case '我生': return `${sourceName}生助${targetName}`;
+    case '我克': return `${sourceName}克制${targetName}`;
+    case '生我': return `${sourceName}受${targetName}相生（泄耗${targetName}）`;
+    case '克我': return `${sourceName}被${targetName}所耗`;
+  }
+}
+
 function analyzeState(
   lines: NajiaLine[],
   cal: CalendarInfo,
@@ -269,22 +286,20 @@ function analyzeState(
   let yuejianRelation = '';
   let richenRelation = '';
   if (yongshen) {
-    const relYue = shengKe(cal.yuejianWuxing, yongshen.wuxing);
-    const relRi = shengKe(cal.richenWuxing, yongshen.wuxing);
-    yuejianRelation = `月建${cal.yuejian}${relYue === '克我' ? '克' : relYue === '我克' ? '所克' : relYue}用神`;
-    richenRelation = `日辰${cal.richen}${relRi === '克我' ? '克' : relRi === '我克' ? '所克' : relRi}用神`;
+    yuejianRelation = formatRelation(`月建${cal.yuejian}`, cal.yuejianWuxing, '用神', yongshen.wuxing);
+    richenRelation = formatRelation(`日辰${cal.richen}`, cal.richenWuxing, '用神', yongshen.wuxing);
   }
 
   const relShi = yongshen ? shengKe(shiLine.wuxing, yongshen.wuxing) : '';
   const shiyaoRelation = yongshen
-    ? `世爻${shiLine.ganzhi}${relShi === '同我' ? '持用神同类' : relShi === '克我' ? '克用神' : relShi === '生我' ? '生用神' : `与用神${relShi}`}`
+    ? formatRelation(`世爻${shiLine.ganzhi}`, shiLine.wuxing, '用神', yongshen.wuxing)
     : `世爻${shiLine.ganzhi}持${shiLine.liuqin}`;
 
   const movingLines = lines
     .filter((l) => l.isMoving)
     .map((l) => `${l.liushen}${l.liuqin}${l.ganzhi}（第${l.index}爻）动，变${l.changedKind === 'YANG' ? '阳' : '阴'}，入${bianGuaName ? `变卦${bianGuaName}` : ''}`);
 
-  return { yongshenDetail, yuejianRelation, richenRelation, shiyaoRelation, movingLines };
+  return { yongshenDetail, yuejianRelation, richenRelation, shiyaoRelation, movingLines, shiKeYongshen: relShi === '我克' };
 }
 
 /** 印章定性 */
@@ -342,8 +357,7 @@ function reportCrux(a: ReturnType<typeof analyzeState>, yongshen: NajiaLine | nu
   if (yongshen.tags.includes('月破')) parts.push(`用神${yongshen.ganzhi}受月建冲破，根本受损`);
   if (yongshen.tags.includes('空亡')) parts.push(`用神落旬空，事体虚而不实`);
   if (a.movingLines.length === 0) parts.push('全局无动爻，局面缺乏转机之力');
-  const shiWeak = a.shiyaoRelation.includes('克用神');
-  if (shiWeak) parts.push('世爻与用神相克，自身立场与所求之事存在内在冲突');
+  if (a.shiKeYongshen) parts.push('世爻克制用神，自身立场与所求之事存在内在冲突');
   if (parts.length === 0) parts.push('用神无大碍，症结在于时机未至、火候未到');
   return `核心症结：${parts.join('；')}。`;
 }

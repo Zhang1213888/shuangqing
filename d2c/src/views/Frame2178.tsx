@@ -19,6 +19,14 @@ const Frame2178 = () => {
       if (t.includes('应爻')) return '应爻';
       return '静爻';
     };
+    const getTagStyle = (tag: string): { color: string; borderColor: string; backgroundColor: string } => {
+      switch (tag) {
+        case '用神': return { color: 'var(--c-gold)', borderColor: 'var(--c-gold)', backgroundColor: 'rgba(176, 141, 79, 0.08)' };
+        case '月破': case '动爻': return { color: 'var(--c-cinnabar)', borderColor: 'rgba(200, 60, 35, 0.4)', backgroundColor: 'rgba(200, 60, 35, 0.06)' };
+        case '世爻': case '应爻': return { color: 'var(--c-bamboo)', borderColor: 'var(--c-bamboo)', backgroundColor: 'transparent' };
+        case '空亡': case '静爻': default: return { color: 'var(--c-ink-light)', borderColor: 'var(--c-hairline)', backgroundColor: 'transparent' };
+      }
+    };
     const stampParts = (r?.stamp?.title || '— · —').split('·');
     return (
         <div className="scroll-container">
@@ -34,9 +42,9 @@ const Frame2178 = () => {
                         <div
                             id="2_200"
                             className="Pixso-vector-2_200 pixso-relative-no-shrink"
-                            style={{ cursor: "pointer" }}
+                            style={{ cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, color: "var(--c-ink)" }}
                             onClick={() => navigate("/")}
-                        ></div>
+                        >←</div>
                         <p
                             id="2_203"
                             className="Pixso-paragraph-2_203 pixso-relative-auto-size pixso-flex-shrink-0"
@@ -68,6 +76,7 @@ const Frame2178 = () => {
                                             <p
                                                 id="2_213"
                                                 className="Pixso-paragraph-2_213 pixso-relative-auto-size pixso-flex-shrink-0"
+                                                style={(() => { const t = stampParts[0] || ''; if (t.length >= 5) return { fontSize: '12px', letterSpacing: '0px' }; return undefined; })()}
                                             >
                                                 {stampParts[0] ?? "卦成"}
                                             </p>
@@ -154,7 +163,7 @@ const Frame2178 = () => {
                                     id="2_226"
                                     className="stroke-wrapper-2_226 pixso-relative-no-shrink pixso-flex"
                                     onClick={() => setSelectedLine(6)}
-                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 6 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 6 ? 'rgba(176, 141, 79, 0.08)' : undefined, borderLeft: selectedLine === 6 ? '2px solid var(--c-gold)' : '2px solid transparent' }}
                                 >
                                     <div className="Pixso-frame-2_226 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_226"></div>
@@ -196,20 +205,23 @@ const Frame2178 = () => {
                                                 className="Pixso-frame-2_233 pixso-relative-flex"
                                             >
                                                 <div className="frame-content-2_233 pixso-relative-flex">
+                                                    {(() => { const tag6 = getPrimaryTag(L(6)); const s6 = getTagStyle(tag6); return (<>
                                                     <div
                                                         id="2_234"
                                                         className="stroke-wrapper-2_234 pixso-relative-flex-auto-size pixso-flex-shrink-0"
                                                     >
-                                                        <div className="Pixso-frame-2_234 pixso-relative-no-shrink pixso-flex">
+                                                        <div className="Pixso-frame-2_234 pixso-relative-no-shrink pixso-flex" style={{ backgroundColor: s6.backgroundColor }}>
                                                             <p
                                                                 id="2_235"
                                                                 className="Pixso-paragraph-2_235 pixso-relative-auto-size pixso-flex-shrink-0"
+                                                                style={{ color: s6.color }}
                                                             >
-                                                                {getPrimaryTag(L(6))}
+                                                                {tag6}
                                                             </p>
                                                         </div>
-                                                        <div className="stroke-2_234"></div>
+                                                        <div className="stroke-2_234" style={{ borderColor: s6.borderColor }}></div>
                                                     </div>
+</>); })()}
                                                 </div>
                                             </div>
                                         </div>
@@ -219,7 +231,7 @@ const Frame2178 = () => {
                                     id="2_236"
                                     className="stroke-wrapper-2_236 pixso-relative-no-shrink pixso-flex"
                                     onClick={() => setSelectedLine(5)}
-                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 5 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 5 ? 'rgba(176, 141, 79, 0.08)' : undefined, borderLeft: selectedLine === 5 ? '2px solid var(--c-gold)' : '2px solid transparent' }}
                                 >
                                     <div className="Pixso-frame-2_236 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_236"></div>
@@ -261,20 +273,23 @@ const Frame2178 = () => {
                                                 className="Pixso-frame-2_243 pixso-relative-flex"
                                             >
                                                 <div className="frame-content-2_243 pixso-relative-flex">
+                                                    {(() => { const tag5 = getPrimaryTag(L(5)); const s5 = getTagStyle(tag5); return (<>
                                                     <div
                                                         id="2_244"
                                                         className="stroke-wrapper-2_244 pixso-relative-flex-auto-size pixso-flex-shrink-0"
                                                     >
-                                                        <div className="Pixso-frame-2_244 pixso-relative-no-shrink pixso-flex">
+                                                        <div className="Pixso-frame-2_244 pixso-relative-no-shrink pixso-flex" style={{ backgroundColor: s5.backgroundColor }}>
                                                             <p
                                                                 id="2_245"
                                                                 className="Pixso-paragraph-2_245 pixso-relative-auto-size pixso-flex-shrink-0"
+                                                                style={{ color: s5.color }}
                                                             >
-                                                                {getPrimaryTag(L(5))}
+                                                                {tag5}
                                                             </p>
                                                         </div>
-                                                        <div className="stroke-2_244"></div>
+                                                        <div className="stroke-2_244" style={{ borderColor: s5.borderColor }}></div>
                                                     </div>
+</>); })()}
                                                 </div>
                                             </div>
                                         </div>
@@ -284,7 +299,7 @@ const Frame2178 = () => {
                                     id="2_246"
                                     className="stroke-wrapper-2_246 pixso-relative-no-shrink pixso-flex"
                                     onClick={() => setSelectedLine(4)}
-                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 4 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 4 ? 'rgba(176, 141, 79, 0.08)' : undefined, borderLeft: selectedLine === 4 ? '2px solid var(--c-gold)' : '2px solid transparent' }}
                                 >
                                     <div className="Pixso-frame-2_246 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_246"></div>
@@ -326,20 +341,23 @@ const Frame2178 = () => {
                                                 className="Pixso-frame-2_252 pixso-relative-flex"
                                             >
                                                 <div className="frame-content-2_252 pixso-relative-flex">
+                                                    {(() => { const tag4 = getPrimaryTag(L(4)); const s4 = getTagStyle(tag4); return (<>
                                                     <div
                                                         id="2_253"
                                                         className="stroke-wrapper-2_253 pixso-relative-flex-auto-size pixso-flex-shrink-0"
                                                     >
-                                                        <div className="Pixso-frame-2_253 pixso-relative-no-shrink pixso-flex">
+                                                        <div className="Pixso-frame-2_253 pixso-relative-no-shrink pixso-flex" style={{ backgroundColor: s4.backgroundColor }}>
                                                             <p
                                                                 id="2_254"
                                                                 className="Pixso-paragraph-2_254 pixso-relative-auto-size pixso-flex-shrink-0"
+                                                                style={{ color: s4.color }}
                                                             >
-                                                                {getPrimaryTag(L(4))}
+                                                                {tag4}
                                                             </p>
                                                         </div>
-                                                        <div className="stroke-2_253"></div>
+                                                        <div className="stroke-2_253" style={{ borderColor: s4.borderColor }}></div>
                                                     </div>
+</>); })()}
                                                 </div>
                                             </div>
                                         </div>
@@ -349,7 +367,7 @@ const Frame2178 = () => {
                                     id="2_255"
                                     className="stroke-wrapper-2_255 pixso-relative-no-shrink pixso-flex"
                                     onClick={() => setSelectedLine(3)}
-                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 3 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 3 ? 'rgba(176, 141, 79, 0.08)' : undefined, borderLeft: selectedLine === 3 ? '2px solid var(--c-gold)' : '2px solid transparent' }}
                                 >
                                     <div className="Pixso-frame-2_255 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_255"></div>
@@ -391,20 +409,23 @@ const Frame2178 = () => {
                                                 className="Pixso-frame-2_261 pixso-relative-flex"
                                             >
                                                 <div className="frame-content-2_261 pixso-relative-flex">
+                                                    {(() => { const tag3 = getPrimaryTag(L(3)); const s3 = getTagStyle(tag3); return (<>
                                                     <div
                                                         id="2_262"
                                                         className="stroke-wrapper-2_262 pixso-relative-flex-auto-size pixso-flex-shrink-0"
                                                     >
-                                                        <div className="Pixso-frame-2_262 pixso-relative-no-shrink pixso-flex">
+                                                        <div className="Pixso-frame-2_262 pixso-relative-no-shrink pixso-flex" style={{ backgroundColor: s3.backgroundColor }}>
                                                             <p
                                                                 id="2_263"
                                                                 className="Pixso-paragraph-2_263 pixso-relative-auto-size pixso-flex-shrink-0"
+                                                                style={{ color: s3.color }}
                                                             >
-                                                                {getPrimaryTag(L(3))}
+                                                                {tag3}
                                                             </p>
                                                         </div>
-                                                        <div className="stroke-2_262"></div>
+                                                        <div className="stroke-2_262" style={{ borderColor: s3.borderColor }}></div>
                                                     </div>
+</>); })()}
                                                 </div>
                                             </div>
                                         </div>
@@ -414,7 +435,7 @@ const Frame2178 = () => {
                                     id="2_264"
                                     className="stroke-wrapper-2_264 pixso-relative-no-shrink pixso-flex"
                                     onClick={() => setSelectedLine(2)}
-                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 2 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 2 ? 'rgba(176, 141, 79, 0.08)' : undefined, borderLeft: selectedLine === 2 ? '2px solid var(--c-gold)' : '2px solid transparent' }}
                                 >
                                     <div className="Pixso-frame-2_264 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_264"></div>
@@ -456,20 +477,23 @@ const Frame2178 = () => {
                                                 className="Pixso-frame-2_271 pixso-relative-flex"
                                             >
                                                 <div className="frame-content-2_271 pixso-relative-flex">
+                                                    {(() => { const tag2 = getPrimaryTag(L(2)); const s2 = getTagStyle(tag2); return (<>
                                                     <div
                                                         id="2_272"
                                                         className="stroke-wrapper-2_272 pixso-relative-flex-auto-size pixso-flex-shrink-0"
                                                     >
-                                                        <div className="Pixso-frame-2_272 pixso-relative-no-shrink pixso-flex">
+                                                        <div className="Pixso-frame-2_272 pixso-relative-no-shrink pixso-flex" style={{ backgroundColor: s2.backgroundColor }}>
                                                             <p
                                                                 id="2_273"
                                                                 className="Pixso-paragraph-2_273 pixso-relative-auto-size pixso-flex-shrink-0"
+                                                                style={{ color: s2.color }}
                                                             >
-                                                                {getPrimaryTag(L(2))}
+                                                                {tag2}
                                                             </p>
                                                         </div>
-                                                        <div className="stroke-2_272"></div>
+                                                        <div className="stroke-2_272" style={{ borderColor: s2.borderColor }}></div>
                                                     </div>
+</>); })()}
                                                 </div>
                                             </div>
                                         </div>
@@ -479,7 +503,7 @@ const Frame2178 = () => {
                                     id="2_274"
                                     className="stroke-wrapper-2_274 pixso-relative-no-shrink pixso-flex"
                                     onClick={() => setSelectedLine(1)}
-                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 1 ? 'rgba(176, 141, 79, 0.1)' : undefined }}
+                                    style={{ cursor: "pointer", backgroundColor: selectedLine === 1 ? 'rgba(176, 141, 79, 0.08)' : undefined, borderLeft: selectedLine === 1 ? '2px solid var(--c-gold)' : '2px solid transparent' }}
                                 >
                                     <div className="Pixso-frame-2_274 pixso-relative-no-shrink pixso-flex"></div>
                                     <div className="stroke-2_274"></div>
@@ -521,20 +545,23 @@ const Frame2178 = () => {
                                                 className="Pixso-frame-2_280 pixso-relative-flex"
                                             >
                                                 <div className="frame-content-2_280 pixso-relative-flex">
+                                                    {(() => { const tag1 = getPrimaryTag(L(1)); const s1 = getTagStyle(tag1); return (<>
                                                     <div
                                                         id="2_281"
                                                         className="stroke-wrapper-2_281 pixso-relative-flex-auto-size pixso-flex-shrink-0"
                                                     >
-                                                        <div className="Pixso-frame-2_281 pixso-relative-no-shrink pixso-flex">
+                                                        <div className="Pixso-frame-2_281 pixso-relative-no-shrink pixso-flex" style={{ backgroundColor: s1.backgroundColor }}>
                                                             <p
                                                                 id="2_282"
                                                                 className="Pixso-paragraph-2_282 pixso-relative-auto-size pixso-flex-shrink-0"
+                                                                style={{ color: s1.color }}
                                                             >
-                                                                {getPrimaryTag(L(1))}
+                                                                {tag1}
                                                             </p>
                                                         </div>
-                                                        <div className="stroke-2_281"></div>
+                                                        <div className="stroke-2_281" style={{ borderColor: s1.borderColor }}></div>
                                                     </div>
+</>); })()}
                                                 </div>
                                             </div>
                                         </div>
@@ -553,20 +580,30 @@ const Frame2178 = () => {
                                         className="Pixso-paragraph-2_284 pixso-relative-auto-size pixso-flex-shrink-0"
                                     >
                                         {(() => {
-                                                if (selectedLine === r?.yongshenIndex && r?.tooltip?.content) return r.tooltip.title;
-                                                return r ? `第${selectedLine}爻 · ${L(selectedLine)?.liuqin || '—'}${L(selectedLine)?.ganzhi || ''}${L(selectedLine)?.tags?.includes('用神') ? '（用神）' : ''}` : '择爻 · —';
-                                              })()}
+                                            const lx = L(selectedLine);
+                                            if (!lx) return '择爻 · —';
+                                            return `${lx.liushen} · ${lx.liuqin}${lx.ganzhi}${lx.isYongshen ? '（用神）' : ''}`;
+                                          })()}
                                     </p>
                                     <p
                                         id="2_285"
                                         className="Pixso-paragraph-2_285 pixso-relative-no-shrink pixso-h-auto"
                                     >
                                         {(() => {
-                                                if (selectedLine === r?.yongshenIndex && r?.tooltip?.content) return r.tooltip.content;
-                                                if (L(selectedLine))
-                                                  return `第${selectedLine}爻${L(selectedLine)?.ganzhi || ''}，${L(selectedLine)?.liuqin || ''}持${L(selectedLine)?.tags?.join('、') || '静爻'}。${L(selectedLine)?.isMoving ? '此爻发动，为事之转机所在。' : '此爻安静，事尚未起。'}`;
-                                                return r?.tooltip?.content ?? '';
-                                              })()}
+                                            const lx = L(selectedLine);
+                                            if (!lx) return r?.tooltip?.content ?? '';
+                                            const rel = r?.lineRelations?.[selectedLine];
+                                            const tags = (lx.tags || []).filter((t: string) => t !== '用神').join('、');
+                                            const lines: string[] = [];
+                                            if (rel) {
+                                              lines.push(rel.yuejian);
+                                              lines.push(rel.richen);
+                                            }
+                                            if (lx.isMoving) lines.push('此爻发动，为事之转机所在。');
+                                            else lines.push('此爻安静，事尚未起。');
+                                            if (tags) lines.push(`标签：${tags}`);
+                                            return lines.join('。') + '。';
+                                          })()}
                                     </p>
                                 </div>
                             </div>
@@ -702,35 +739,16 @@ const Frame2178 = () => {
                         <div className="frame-content-2_302 pixso-relative-flex">
                             <div
                                 id="2_303"
-                                className="stroke-wrapper-2_303 pixso-relative-no-shrink pixso-flex"
+                                className="Pixso-frame-2_303 pixso-relative-no-shrink pixso-flex"
+                                onClick={() => { sessionStorage.removeItem("sq_casting_state"); navigate("/"); }}
+                                style={{ cursor: "pointer" }}
                             >
-                                <div className="Pixso-frame-2_303 pixso-relative-no-shrink pixso-flex"></div>
-                                <div className="stroke-2_303"></div>
-                                <div className="Pixso-frame-2_303-content-layer">
-                                    <div className="frame-content-2_303 pixso-relative-flex" onClick={() => { sessionStorage.removeItem("sq_casting_state"); navigate("/"); }} style={{ cursor: "pointer" }}>
-                                        <p
-                                            id="2_304"
-                                            className="Pixso-paragraph-2_304 pixso-relative-auto-size pixso-flex-shrink-0"
-                                        >
-                                            {"再占一次"}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                id="2_305"
-                                className="Pixso-frame-2_305 pixso-relative-flex"
-                            >
-                                <div className="frame-content-2_305 pixso-relative-flex">
-                                    <div
-                                        id="2_306"
-                                        className="Pixso-vector-2_306 pixso-relative-no-shrink"
-                                    ></div>
+                                <div className="frame-content-2_303 pixso-relative-flex">
                                     <p
-                                        id="2_308"
-                                        className="Pixso-paragraph-2_308 pixso-relative-auto-size pixso-flex-shrink-0"
+                                        id="2_304"
+                                        className="Pixso-paragraph-2_304 pixso-relative-auto-size pixso-flex-shrink-0"
                                     >
-                                        {"存卦入录"}
+                                        {"返回首页 · 重新策卦"}
                                     </p>
                                 </div>
                             </div>

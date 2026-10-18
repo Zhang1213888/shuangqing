@@ -19,9 +19,9 @@ const Frame2309 = () => {
                         <div
                             id="2_331"
                             className="Pixso-vector-2_331 pixso-relative-no-shrink"
-                            style={{ cursor: "pointer" }}
+                            style={{ cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, color: "var(--c-ink)" }}
                             onClick={() => navigate("/")}
-                        ></div>
+                        >←</div>
                         <p
                             id="2_334"
                             className="Pixso-paragraph-2_334 pixso-relative-auto-size pixso-flex-shrink-0"
@@ -264,10 +264,6 @@ const Frame2309 = () => {
                             style={{ cursor: "pointer" }}
                         >
                             <div className="frame-content-2_393 pixso-relative-flex">
-                                <div
-                                    id="2_394"
-                                    className="Pixso-vector-2_394 pixso-relative-no-shrink"
-                                ></div>
                                 <p
                                     id="2_399"
                                     className="Pixso-paragraph-2_399 pixso-relative-auto-size pixso-flex-shrink-0"

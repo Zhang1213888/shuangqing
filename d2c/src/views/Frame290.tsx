@@ -37,12 +37,16 @@ const Frame290 = () => {
   const [state, update] = useCastingState();
   const [casting, setCasting] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [landing, setLanding] = useState(false);
+  const [counterKey, setCounterKey] = useState(0);
+  const prevN = useRef(0);
   const holdTimer = useRef<number | null>(null);
+  const landingTimer = useRef<number | null>(null);
   const question = state.question || "惟精惟一，心中默念所求之事";
   const modeTitle = state.mode === "ZHOUYI" ? "问道 · 周易" : "问事 · 六爻";
 
   /** 单次投掷：旋转动画持续到落爻（1400ms），模拟水平转动后停下 */
-  const doToss = useCallback(async () => {
+  const doToss = useCallback(() => {
     const cur = stateRef.current;
     if (cur.tosses.length >= 6 || casting || submitting) return;
     setCasting(true);
@@ -50,6 +54,10 @@ const Frame290 = () => {
     setTimeout(async () => {
       const tosses = [...cur.tosses, v];
       setCasting(false);
+      setLanding(true);
+      setCounterKey(k => k + 1);
+      if (landingTimer.current) clearTimeout(landingTimer.current);
+      landingTimer.current = window.setTimeout(() => setLanding(false), 700);
       if (tosses.length === 6) {
         update({ ...cur, tosses });
         setSubmitting(true);
@@ -84,15 +92,17 @@ const Frame290 = () => {
   const stateRef = useRef(state);
   stateRef.current = state;
 
-  /** 长按：连投直到 6 爻满或松手 */
+  /** 长按：连投直到 6 爻满或松手（伴随触觉震动） */
   const startHold = () => {
     if (holdTimer.current) return;
+    navigator.vibrate?.([40, 60, 40]);
     doToss();
     holdTimer.current = window.setInterval(() => {
       if (stateRef.current.tosses.length >= 6) {
         stopHold();
         return;
       }
+      navigator.vibrate?.([40, 60, 40]);
       doToss();
     }, 1600);
   };
@@ -102,7 +112,7 @@ const Frame290 = () => {
       holdTimer.current = null;
     }
   };
-  useEffect(() => () => stopHold(), []);
+  useEffect(() => () => { stopHold(); if (landingTimer.current) clearTimeout(landingTimer.current); }, []);
   useEffect(() => {
     if (stateRef.current.tosses.length >= 6) {
       update({ ...stateRef.current, tosses: [] });
@@ -131,7 +141,7 @@ const Frame290 = () => {
         {/* 中部：外环 + 铜钱（起卦旋转）+ 提示 */}
         <div className="sq-coin-stage">
           <div className="sq-coin-ring">
-            <div className={"sq-coin" + (casting ? " spinning" : "")}>
+            <div className={"sq-coin" + (casting ? " spinning" : "") + (landing ? " landing" : "")}>
               <span className="sq-coin-char top">開</span>
               <span className="sq-coin-char right">通</span>
               <span className="sq-coin-char bottom">元</span>
@@ -148,7 +158,7 @@ const Frame290 = () => {
         <div className="sq-bottom">
           <div className="sq-bottom-head">
             <p>六爻 · 自下而生</p>
-            <p>已成 {n} / 6</p>
+            <p key={counterKey} className="sq-counter-ink">已成 {n} / 6</p>
           </div>
 
           <div className="sq-yao-list">

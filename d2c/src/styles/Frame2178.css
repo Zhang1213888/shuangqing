@@ -158,7 +158,7 @@
 }
 
 .Pixso-vector-2_200 {
-  background-image: url("assets/images/arrowleft0.svg");
+  background-image: url("/images/arrowleft0.svg");
 }
 
 .Pixso-paragraph-2_203 {
@@ -352,6 +352,7 @@
   isolation: isolate;
   width: 100%;
   height: 36px;
+  transition: background-color 0.2s ease, border-left 0.2s ease;
 }
 
 .stroke-2_226 {
@@ -480,6 +481,7 @@
   isolation: isolate;
   width: 100%;
   height: 36px;
+  transition: background-color 0.2s ease, border-left 0.2s ease;
 }
 
 .stroke-2_236 {
@@ -576,6 +578,7 @@
   isolation: isolate;
   width: 100%;
   height: 36px;
+  transition: background-color 0.2s ease, border-left 0.2s ease;
 }
 
 .stroke-2_246 {
@@ -669,6 +672,7 @@
   isolation: isolate;
   width: 100%;
   height: 36px;
+  transition: background-color 0.2s ease, border-left 0.2s ease;
 }
 
 .stroke-2_255 {
@@ -782,6 +786,7 @@
   isolation: isolate;
   width: 100%;
   height: 36px;
+  transition: background-color 0.2s ease, border-left 0.2s ease;
 }
 
 .stroke-2_264 {
@@ -869,6 +874,7 @@
   isolation: isolate;
   width: 100%;
   height: 36px;
+  transition: background-color 0.2s ease, border-left 0.2s ease;
 }
 
 .stroke-2_274 {
@@ -980,6 +986,7 @@
   color: var(--c-gold);
   white-space: normal;
   word-break: break-word;
+  transition: opacity 0.2s ease;
 }
 
 .Pixso-paragraph-2_285 {
@@ -989,6 +996,7 @@
   line-height: 179.999995%;
   color: var(--c-ink-mid);
   width: 310px;
+  transition: opacity 0.2s ease;
 }
 
 .Pixso-frame-2_287,.Pixso-frame-2_292 {

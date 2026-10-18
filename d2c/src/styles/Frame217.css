@@ -399,13 +399,16 @@
   isolation: isolate;
   width: 342px;
   height: 200px;
-  animation: card-pulse 3s ease-in-out infinite;
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: border-flow-gold 5s ease-in-out infinite;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .stroke-wrapper-2_64:hover {
-  animation: card-pulse 1.5s ease-in-out infinite, float-hover 2s ease-in-out infinite;
+  animation: border-flow-gold 2.5s ease-in-out infinite, float-hover 2s ease-in-out infinite;
   box-shadow: 0 8px 32px rgba(201, 164, 75, 0.25), 0 0 60px rgba(201, 164, 75, 0.08);
 }
 
@@ -664,13 +667,16 @@
   isolation: isolate;
   width: 342px;
   height: 200px;
-  animation: card-pulse-right 3s ease-in-out infinite;
-  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: border-flow-bamboo 5s ease-in-out infinite;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .stroke-wrapper-2_79:hover {
-  animation: card-pulse-right 1.5s ease-in-out infinite, float-hover 2s ease-in-out infinite;
+  animation: border-flow-bamboo 2.5s ease-in-out infinite, float-hover 2s ease-in-out infinite;
   box-shadow: 0 8px 32px rgba(90, 134, 196, 0.25), 0 0 60px rgba(90, 134, 196, 0.08);
 }
 
@@ -950,14 +956,34 @@
   100% { background-position: 0% 0%; }
 }
 
-@keyframes card-pulse {
-  0%, 100% { box-shadow: 0 0 4px rgba(201, 164, 75, 0.15), 0 0 12px rgba(201, 164, 75, 0.05); }
-  50% { box-shadow: 0 0 8px rgba(201, 164, 75, 0.30), 0 0 20px rgba(201, 164, 75, 0.10); }
+@keyframes border-flow-gold {
+  0% {
+    border-color: rgba(201, 164, 75, 0.35);
+    box-shadow: 0 4px 20px rgba(201, 164, 75, 0.06), inset 0 0 15px rgba(201, 164, 75, 0.02);
+  }
+  50% {
+    border-color: rgba(201, 164, 75, 0.85);
+    box-shadow: 0 8px 32px rgba(201, 164, 75, 0.20), inset 0 0 25px rgba(201, 164, 75, 0.08);
+  }
+  100% {
+    border-color: rgba(201, 164, 75, 0.35);
+    box-shadow: 0 4px 20px rgba(201, 164, 75, 0.06), inset 0 0 15px rgba(201, 164, 75, 0.02);
+  }
 }
 
-@keyframes card-pulse-right {
-  0%, 100% { box-shadow: 0 0 4px rgba(90, 134, 196, 0.15), 0 0 12px rgba(90, 134, 196, 0.05); }
-  50% { box-shadow: 0 0 8px rgba(90, 134, 196, 0.30), 0 0 20px rgba(90, 134, 196, 0.10); }
+@keyframes border-flow-bamboo {
+  0% {
+    border-color: rgba(90, 134, 196, 0.35);
+    box-shadow: 0 4px 20px rgba(90, 134, 196, 0.06), inset 0 0 15px rgba(90, 134, 196, 0.02);
+  }
+  50% {
+    border-color: rgba(90, 134, 196, 0.85);
+    box-shadow: 0 8px 32px rgba(90, 134, 196, 0.20), inset 0 0 25px rgba(90, 134, 196, 0.08);
+  }
+  100% {
+    border-color: rgba(90, 134, 196, 0.35);
+    box-shadow: 0 4px 20px rgba(90, 134, 196, 0.06), inset 0 0 15px rgba(90, 134, 196, 0.02);
+  }
 }
 
 /* ---- 太极图 ---- */

@@ -113,10 +113,16 @@ export interface NajiaResult {
     liushen: LiuShen;
     liuqin: LiuQin | '';
     ganzhi: string;
+    dizhi: DiZhi;
+    wuxing: WuXing;
     tags: LineTag[];
     isYongshen: boolean;
     isMoving: boolean;
     kind: YaoKind;
+  }>;
+  lineRelations: Record<number, {
+    yuejian: string;
+    richen: string;
   }>;
   tooltip: {
     title: string;
