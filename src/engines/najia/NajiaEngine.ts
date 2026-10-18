@@ -15,7 +15,7 @@ import {
   shengKe,
 } from '../shared/constants';
 import { buildCalendar, dayGanzhiIndex, ganOfIndex } from '../shared/calendar';
-import { changedKind, guaFromTosses, isMoving, yaoKind } from '../shared/casting';
+import { bianGuaBinary, changedKind, guaFromBinary, guaFromTosses, isMoving, yaoKind } from '../shared/casting';
 import type {
   CalendarInfo,
   CastRequest,
@@ -61,7 +61,7 @@ function guaName(wai: Trigram, nei: Trigram): string {
 }
 
 /** 问事类型 → 用神六亲推定 */
-export type AskCategory = '事业' | '财运' | '感情' | '健康' | '官司' | '出行' | '考试' | '寻人寻物' | '通用';
+export type AskCategory = '事业' | '财运' | '感情' | '健康' | '官司' | '出行' | '考试' | '寻人寻物' | '综合' | '通用';
 
 /** 简单关键词归类问事 */
 export function categorize(question: string): AskCategory {
@@ -79,18 +79,19 @@ export function categorize(question: string): AskCategory {
   for (const [cat, keys] of table) {
     if (keys.some((k) => q.includes(k.trim()))) return cat;
   }
-  return '事业';
+  return '综合';
 }
 
 const YONGSHEN_MAP: Record<AskCategory, LiuQin> = {
   财运: '妻财',
   事业: '官鬼',
-  感情: '妻财', // 男测女以妻财为用神；女测男以官鬼——简化处理，LLM 文案内说明
-  考试: '父母', // 父母爻主文书学业；官鬼为名次
-  健康: '官鬼', // 病以官鬼为病祟，兼看世爻
+  感情: '妻财',
+  考试: '父母',
+  健康: '官鬼',
   官司: '官鬼',
-  出行: '父母', // 行程文书
-  寻人寻物: '妻财', // 物以财为用（可按物性细分，此处取简）
+  出行: '父母',
+  寻人寻物: '妻财',
+  综合: '官鬼',
   通用: '官鬼',
 };
 
@@ -122,6 +123,10 @@ export function najiaCast(req: CastRequest): NajiaResult {
   const { gong, shi, ying } = { gong: entry.gong, shi: entry.shi, ying: entry.ying };
   const gongWuxing = GONG_WUXING[gong];
   const benGuaName = guaName(wai, nei);
+
+  // ---- 变卦计算 ----
+  const { wai: bgWai, nei: bgNei } = guaFromBinary(bianGuaBinary(tosses));
+  const bianGuaName = guaName(bgWai, bgNei);
 
   // ---- 装干支（浑天甲子）----
   const neiNajia = NAJIA_TABLE[nei].nei;
@@ -170,13 +175,44 @@ export function najiaCast(req: CastRequest): NajiaResult {
 
   // ---- 用神推定 ----
   const cat = categorize(question);
-  const yongshenLiuqin: LiuQin = YONGSHEN_MAP[cat] || '官鬼';
-  const yongshenIndex = pickYongshen(lines, yongshenLiuqin);
-  const yongshenLine = yongshenIndex ? lines.find((l) => l.index === yongshenIndex) : null;
+  let yongshenLiuqin: LiuQin;
+  let yongshenIndex: number | null;
+  let yongshenLine: NajiaLine | null = null;
+
+  if (cat === '综合') {
+    // "神兆机于动"：纯默念模式下动态取用神
+    const movingLines = lines.filter((l) => l.isMoving);
+    if (movingLines.length > 0) {
+      const shiLine = lines[shi - 1];
+      const shiMoving = movingLines.find((l) => l.index === shi);
+      if (shiMoving) {
+        // 世爻发动，取世爻为机枢
+        yongshenLine = shiMoving;
+      } else {
+        // 取与世爻发生生克冲合的动爻；若无则取最上方动爻
+        const related = movingLines.find((l) => {
+          const rel = shengKe(shiLine.wuxing, l.wuxing);
+          return rel !== '同我' || chong(shiLine.dizhi, l.dizhi) || he(shiLine.dizhi, l.dizhi);
+        });
+        yongshenLine = related || movingLines[movingLines.length - 1];
+      }
+      yongshenLiuqin = (yongshenLine.liuqin || '官鬼') as LiuQin;
+      yongshenIndex = yongshenLine.index;
+    } else {
+      // 六爻皆静，直接取世爻
+      yongshenLine = lines[shi - 1];
+      yongshenLiuqin = (yongshenLine.liuqin || '官鬼') as LiuQin;
+      yongshenIndex = shi;
+    }
+  } else {
+    yongshenLiuqin = YONGSHEN_MAP[cat] || '官鬼';
+    yongshenIndex = pickYongshen(lines, yongshenLiuqin);
+    yongshenLine = yongshenIndex ? (lines.find((l) => l.index === yongshenIndex) ?? null) : null;
+  }
   if (yongshenLine) yongshenLine.tags.push('用神');
 
   // ---- 生克关系分析（供 LLM 与 stamp 判定）----
-  const analysis = analyzeState(lines, calendar, gongWuxing, yongshenLine, shi);
+  const analysis = analyzeState(lines, calendar, gongWuxing, yongshenLine, shi, bianGuaName);
 
   // ---- 印章判定（凶/吉/平）----
   const stamp = judgeStamp(analysis, yongshenLine);
@@ -187,7 +223,7 @@ export function najiaCast(req: CastRequest): NajiaResult {
     gong,
     gongWuxing,
     benGuaName,
-    bianGuaName: benGuaName, // 变卦名可由 bianGuaBinary 求得上卦下卦后查表；先占位
+    bianGuaName,
     shiIndex: shi,
     yingIndex: ying,
     yongshenIndex,
@@ -225,6 +261,7 @@ function analyzeState(
   gongWuxing: WuXing,
   yongshen: NajiaLine | null,
   shi: number,
+  bianGuaName: string,
 ) {
   const shiLine = lines[shi - 1];
   const yongshenDetail = yongshen
@@ -247,7 +284,7 @@ function analyzeState(
 
   const movingLines = lines
     .filter((l) => l.isMoving)
-    .map((l) => `${l.liushen}${l.liuqin}${l.ganzhi}（第${l.index}爻）动，变${l.changedKind === 'YANG' ? '阳' : '阴'}`);
+    .map((l) => `${l.liushen}${l.liuqin}${l.ganzhi}（第${l.index}爻）动，变${l.changedKind === 'YANG' ? '阳' : '阴'}，入${bianGuaName ? `变卦${bianGuaName}` : ''}`);
 
   return { yongshenDetail, yuejianRelation, richenRelation, shiyaoRelation, movingLines };
 }

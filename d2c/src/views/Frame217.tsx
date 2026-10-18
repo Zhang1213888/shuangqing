@@ -151,7 +151,7 @@ const Frame217 = () => {
                             id="2_63"
                             className="Pixso-paragraph-2_63 pixso-relative-auto-size pixso-flex-shrink-0"
                         >
-                            {"此刻所惑，皆可落笔"}
+                            {"凝神静气，心中默念"}
                         </p>
                         <div
                             id="2_64"

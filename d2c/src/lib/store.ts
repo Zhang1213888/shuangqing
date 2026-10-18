@@ -17,7 +17,7 @@ export interface CastingState {
 }
 
 const KEY = 'sq_casting_state';
-const empty: CastingState = { mode: 'NAJIA', question: '', tosses: [] };
+const empty: CastingState = { mode: 'NAJIA', question: '心中默念，凝神问卜', tosses: [] };
 
 export function loadState(): CastingState {
   try {
@@ -34,7 +34,7 @@ export function saveState(s: CastingState) {
 }
 
 export function resetState(mode: CastMode) {
-  saveState({ mode, question: '', tosses: [] });
+  saveState({ mode, question: '心中默念，凝神问卜', tosses: [] });
 }
 
 /** React hook：订阅状态变化 */
@@ -51,10 +51,10 @@ export function useCastingState(): [CastingState, (s: CastingState) => void] {
 
 /** 单次三币投掷（字=2 背=3，求和 6-9），crypto 真随机 */
 export function tossOnce(): number {
-  const buf = new Uint32Array(1);
+  const buf = new Uint32Array(3);
   crypto.getRandomValues(buf);
   const a = buf[0] % 2 === 0 ? 2 : 3;
-  const b = buf[0] % 2 === 0 ? 2 : 3;
-  const c = buf[0] % 2 === 0 ? 2 : 3;
+  const b = buf[1] % 2 === 0 ? 2 : 3;
+  const c = buf[2] % 2 === 0 ? 2 : 3;
   return a + b + c;
 }

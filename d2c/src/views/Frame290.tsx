@@ -38,7 +38,7 @@ const Frame290 = () => {
   const [casting, setCasting] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const holdTimer = useRef<number | null>(null);
-  const question = state.question || "所求何事？";
+  const question = state.question || "惟精惟一，心中默念所求之事";
   const modeTitle = state.mode === "ZHOUYI" ? "问道 · 周易" : "问事 · 六爻";
 
   /** 单次投掷：旋转动画持续到落爻（1400ms），模拟水平转动后停下 */
@@ -55,12 +55,12 @@ const Frame290 = () => {
         try {
           let result = await castApi({
             mode: cur.mode,
-            question: cur.question || "心之所惑",
+            question: "惟精惟一，心中默念所求之事",
             timestamp: Date.now(),
             tosses: tosses as [number, number, number, number, number, number],
           });
           try {
-            result = await interpretApi(result, cur.question || "心之所惑");
+            result = await interpretApi(result, "惟精惟一，心中默念所求之事");
           } catch (e) {
             console.warn("interpret 降级为引擎文案", e);
           }
@@ -116,7 +116,7 @@ const Frame290 = () => {
 
         {/* 所问 + 分隔线 */}
         <div className="sq-ask">
-          <p className="sq-ask-label">所问</p>
+          <p className="sq-ask-label">默念</p>
           <p className="sq-ask-text">{question}</p>
           <div className="sq-ask-divider" />
         </div>

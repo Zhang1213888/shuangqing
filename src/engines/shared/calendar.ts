@@ -42,7 +42,7 @@ export function dayGanzhiIndex(ts: number): number {
   const d = new Date(ts);
   // 子时（23:00+）归次日
   const dayShift = d.getHours() >= 23 ? 1 : 0;
-  const localMidnight = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate() + dayShift, -d.getTimezoneOffset() / 60);
+  const localMidnight = Date.UTC(d.getFullYear(), d.getMonth(), d.getDate() + dayShift);
   const days = Math.floor((localMidnight - EPOCH_DATE_UTC) / 86400000);
   return ((days + EPOCH_GANZHI_INDEX) % 60 + 60) % 60;
 }

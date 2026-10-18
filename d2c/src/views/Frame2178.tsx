@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useCastingState } from "@/lib/store";
 import "@/styles/Frame2178.css";
@@ -6,6 +7,18 @@ const Frame2178 = () => {
     const [state] = useCastingState();
     const r = state.najiaResult;
     const L = (i: number) => r?.lines?.[i - 1];
+    const [selectedLine, setSelectedLine] = useState<number>(6);
+    const getPrimaryTag = (line: any): string => {
+      if (!line) return '—';
+      const t = line.tags || [];
+      if (t.includes('用神')) return '用神';
+      if (t.includes('月破')) return '月破';
+      if (t.includes('空亡')) return '空亡';
+      if (t.includes('动爻')) return '动爻';
+      if (t.includes('世爻')) return '世爻';
+      if (t.includes('应爻')) return '应爻';
+      return '静爻';
+    };
     const stampParts = (r?.stamp?.title || '— · —').split('·');
     return (
         <div className="scroll-container">
@@ -21,6 +34,8 @@ const Frame2178 = () => {
                         <div
                             id="2_200"
                             className="Pixso-vector-2_200 pixso-relative-no-shrink"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => navigate("/")}
                         ></div>
                         <p
                             id="2_203"
@@ -152,17 +167,17 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_228"
                                                 className="Pixso-frame-2_228 pixso-relative-no-shrink pixso-flex"
+                                                onClick={() => setSelectedLine(6)}
+                                                style={{ cursor: "pointer" }}
                                             >
-                                                <div className="frame-content-2_228 pixso-relative-flex">
-                                                    <div
-                                                        id="2_229"
-                                                        className="Pixso-frame-2_229 pixso-relative-no-shrink"
-                                                    ></div>
-                                                    <div
-                                                        id="2_230"
-                                                        className="Pixso-frame-2_230 pixso-relative-no-shrink"
-                                                    ></div>
+                                              {L(6)?.kind === 'YANG' ? (
+                                                <div style={{ width: '100%', height: 4, background: L(6)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                              ) : (
+                                                <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
+                                                  <div style={{ height: 4, background: L(6)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(6)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
+                                              )}
                                             </div>
                                             <p
                                                 id="2_231"
@@ -190,7 +205,7 @@ const Frame2178 = () => {
                                                                 id="2_235"
                                                                 className="Pixso-paragraph-2_235 pixso-relative-auto-size pixso-flex-shrink-0"
                                                             >
-                                                                {(L(6)?.tags || [])[0] ?? ''}
+                                                                {getPrimaryTag(L(6))}
                                                             </p>
                                                         </div>
                                                         <div className="stroke-2_234"></div>
@@ -217,17 +232,17 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_238"
                                                 className="Pixso-frame-2_238 pixso-relative-no-shrink pixso-flex"
+                                                onClick={() => setSelectedLine(5)}
+                                                style={{ cursor: "pointer" }}
                                             >
-                                                <div className="frame-content-2_238 pixso-relative-flex">
-                                                    <div
-                                                        id="2_239"
-                                                        className="Pixso-frame-2_239 pixso-relative-no-shrink"
-                                                    ></div>
-                                                    <div
-                                                        id="2_240"
-                                                        className="Pixso-frame-2_240 pixso-relative-no-shrink"
-                                                    ></div>
+                                              {L(5)?.kind === 'YANG' ? (
+                                                <div style={{ width: '100%', height: 4, background: L(5)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                              ) : (
+                                                <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
+                                                  <div style={{ height: 4, background: L(5)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(5)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
+                                              )}
                                             </div>
                                             <p
                                                 id="2_241"
@@ -255,7 +270,7 @@ const Frame2178 = () => {
                                                                 id="2_245"
                                                                 className="Pixso-paragraph-2_245 pixso-relative-auto-size pixso-flex-shrink-0"
                                                             >
-                                                                {stampParts[1] ?? ""}
+                                                                {getPrimaryTag(L(5))}
                                                             </p>
                                                         </div>
                                                         <div className="stroke-2_244"></div>
@@ -282,13 +297,17 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_248"
                                                 className="Pixso-frame-2_248 pixso-relative-no-shrink pixso-flex"
+                                                onClick={() => setSelectedLine(4)}
+                                                style={{ cursor: "pointer" }}
                                             >
-                                                <div className="frame-content-2_248 pixso-relative-flex">
-                                                    <div
-                                                        id="2_249"
-                                                        className="Pixso-frame-2_249 pixso-relative-no-shrink"
-                                                    ></div>
+                                              {L(4)?.kind === 'YANG' ? (
+                                                <div style={{ width: '100%', height: 4, background: L(4)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                              ) : (
+                                                <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
+                                                  <div style={{ height: 4, background: L(4)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(4)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
+                                              )}
                                             </div>
                                             <p
                                                 id="2_250"
@@ -316,7 +335,7 @@ const Frame2178 = () => {
                                                                 id="2_254"
                                                                 className="Pixso-paragraph-2_254 pixso-relative-auto-size pixso-flex-shrink-0"
                                                             >
-                                                                {(L(4)?.tags || [])[0] ?? ''}
+                                                                {getPrimaryTag(L(4))}
                                                             </p>
                                                         </div>
                                                         <div className="stroke-2_253"></div>
@@ -343,13 +362,17 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_257"
                                                 className="Pixso-frame-2_257 pixso-relative-no-shrink pixso-flex"
+                                                onClick={() => setSelectedLine(3)}
+                                                style={{ cursor: "pointer" }}
                                             >
-                                                <div className="frame-content-2_257 pixso-relative-flex">
-                                                    <div
-                                                        id="2_258"
-                                                        className="Pixso-frame-2_258 pixso-relative-no-shrink"
-                                                    ></div>
+                                              {L(3)?.kind === 'YANG' ? (
+                                                <div style={{ width: '100%', height: 4, background: L(3)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                              ) : (
+                                                <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
+                                                  <div style={{ height: 4, background: L(3)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(3)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
+                                              )}
                                             </div>
                                             <p
                                                 id="2_259"
@@ -377,7 +400,7 @@ const Frame2178 = () => {
                                                                 id="2_263"
                                                                 className="Pixso-paragraph-2_263 pixso-relative-auto-size pixso-flex-shrink-0"
                                                             >
-                                                                {(L(3)?.tags || [])[0] ?? ''}
+                                                                {getPrimaryTag(L(3))}
                                                             </p>
                                                         </div>
                                                         <div className="stroke-2_262"></div>
@@ -404,17 +427,17 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_266"
                                                 className="Pixso-frame-2_266 pixso-relative-no-shrink pixso-flex"
+                                                onClick={() => setSelectedLine(2)}
+                                                style={{ cursor: "pointer" }}
                                             >
-                                                <div className="frame-content-2_266 pixso-relative-flex">
-                                                    <div
-                                                        id="2_267"
-                                                        className="Pixso-frame-2_267 pixso-relative-no-shrink"
-                                                    ></div>
-                                                    <div
-                                                        id="2_268"
-                                                        className="Pixso-frame-2_268 pixso-relative-no-shrink"
-                                                    ></div>
+                                              {L(2)?.kind === 'YANG' ? (
+                                                <div style={{ width: '100%', height: 4, background: L(2)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                              ) : (
+                                                <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
+                                                  <div style={{ height: 4, background: L(2)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(2)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
+                                              )}
                                             </div>
                                             <p
                                                 id="2_269"
@@ -442,7 +465,7 @@ const Frame2178 = () => {
                                                                 id="2_273"
                                                                 className="Pixso-paragraph-2_273 pixso-relative-auto-size pixso-flex-shrink-0"
                                                             >
-                                                                {(L(2)?.tags || [])[0] ?? ''}
+                                                                {getPrimaryTag(L(2))}
                                                             </p>
                                                         </div>
                                                         <div className="stroke-2_272"></div>
@@ -469,13 +492,17 @@ const Frame2178 = () => {
                                             <div
                                                 id="2_276"
                                                 className="Pixso-frame-2_276 pixso-relative-no-shrink pixso-flex"
+                                                onClick={() => setSelectedLine(1)}
+                                                style={{ cursor: "pointer" }}
                                             >
-                                                <div className="frame-content-2_276 pixso-relative-flex">
-                                                    <div
-                                                        id="2_277"
-                                                        className="Pixso-frame-2_277 pixso-relative-no-shrink"
-                                                    ></div>
+                                              {L(1)?.kind === 'YANG' ? (
+                                                <div style={{ width: '100%', height: 4, background: L(1)?.isMoving ? '#c33' : '#fff', borderRadius: 2, alignSelf: "center" }} />
+                                              ) : (
+                                                <div style={{ display: 'flex', gap: 6, justifyContent: 'center', width: '100%' }}>
+                                                  <div style={{ height: 4, background: L(1)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
+                                                  <div style={{ height: 4, background: L(1)?.isMoving ? '#c33' : '#fff', borderRadius: 2, flex: 1, maxWidth: '40%' }} />
                                                 </div>
+                                              )}
                                             </div>
                                             <p
                                                 id="2_278"
@@ -503,7 +530,7 @@ const Frame2178 = () => {
                                                                 id="2_282"
                                                                 className="Pixso-paragraph-2_282 pixso-relative-auto-size pixso-flex-shrink-0"
                                                             >
-                                                                {(L(1)?.tags || [])[0] ?? ''}
+                                                                {getPrimaryTag(L(1))}
                                                             </p>
                                                         </div>
                                                         <div className="stroke-2_281"></div>
@@ -525,14 +552,16 @@ const Frame2178 = () => {
                                         id="2_284"
                                         className="Pixso-paragraph-2_284 pixso-relative-auto-size pixso-flex-shrink-0"
                                     >
-                                        {r ? `用神 · ${r.yongshenLiuqin}${r.lines?.[r.yongshenIndex-1]?.ganzhi || ''}` : '用神 · —'}
+                                        {r ? `第${selectedLine}爻 · ${L(selectedLine)?.liuqin || '—'}${L(selectedLine)?.ganzhi || ''}${L(selectedLine)?.tags?.includes('用神') ? '（用神）' : ''}` : '择爻 · —'}
                                     </p>
                                     <p
                                         id="2_285"
                                         className="Pixso-paragraph-2_285 pixso-relative-no-shrink pixso-h-auto"
                                     >
                                         {
-                                            r?.tooltip?.content ?? ''
+                                            L(selectedLine)
+                                              ? `第${selectedLine}爻${L(selectedLine)?.ganzhi || ''}，${L(selectedLine)?.liuqin || ''}持${L(selectedLine)?.tags?.join('、') || '静爻'}。${L(selectedLine)?.isMoving ? '此爻发动，为事之转机所在。' : '此爻安静，事尚未起。'}`
+                                              : r?.tooltip?.content ?? ''
                                         }
                                     </p>
                                 </div>
