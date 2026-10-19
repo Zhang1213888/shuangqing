@@ -5,6 +5,7 @@ const Frame2309 = () => {
     const navigate = useNavigate();
     const [state] = useCastingState();
     const r: any = state.zhouyiResult;
+    const loading = state.interpretLoading;
     return (
         <div className="scroll-container">
             <div
@@ -176,8 +177,15 @@ const Frame2309 = () => {
                                             className="Pixso-paragraph-2_379 pixso-relative-no-shrink pixso-h-auto"
                                         >
                                             {
-                                                r?.report?.metaphor ?? ''
-                                            }
+                          loading ? (
+                            <div style={{ width: '100%' }}>
+                              <div className="sq-loader-ring" style={{ marginBottom: 12 }}>卦象推演中</div>
+                              <div className="sq-skeleton sq-skeleton-line" />
+                              <div className="sq-skeleton sq-skeleton-line" />
+                              <div className="sq-skeleton sq-skeleton-line" />
+                            </div>
+                          ) : (r?.report?.metaphor ?? '')
+                        }
                                         </p>
                                     </div>
                                 </div>
@@ -197,8 +205,14 @@ const Frame2309 = () => {
                                             className="Pixso-paragraph-2_382 pixso-relative-no-shrink pixso-h-auto"
                                         >
                                             {
-                                                r?.report?.strategy ?? ''
-                                            }
+                          loading ? (
+                            <div style={{ width: '100%' }}>
+                              <div className="sq-loader-ring" style={{ marginBottom: 12 }}>解卦中</div>
+                              <div className="sq-skeleton sq-skeleton-line" />
+                              <div className="sq-skeleton sq-skeleton-line" />
+                            </div>
+                          ) : (r?.report?.strategy ?? '')
+                        }
                                         </p>
                                     </div>
                                 </div>
@@ -214,7 +228,9 @@ const Frame2309 = () => {
                                         id="2_384"
                                         className="Pixso-paragraph-2_384 pixso-relative-auto-size pixso-flex-shrink-0"
                                     >
-                                        {r?.quote ?? '—'}
+                                        {loading ? (
+                            <div className="sq-loader-ring" style={{ justifyContent: 'center' }}>…</div>
+                          ) : (r?.quote ?? '—')}
                                     </p>
                                 </div>
                             </div>

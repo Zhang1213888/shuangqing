@@ -41,11 +41,33 @@ const ZHOUYI_SYSTEM = `你是一位温和的国学导师，以书信体为人解
 5. 严禁提及天干、地支、五行、六亲、世应、纳甲等六爻术语。
 6. metaphor 与 strategy 各 100-200 字。`;
 
-/** 从模型输出中稳健提取 JSON */
+/** 从模型输出中稳健提取 JSON（容错截断、多余内容） */
 function extractJson(text: string): Record<string, string> {
-  const m = text.match(/\{[\s\S]*\}/);
-  if (!m) throw new Error('LLM 输出中未找到 JSON');
-  return JSON.parse(m[0]);
+  const trimmed = text.trim();
+
+  const tryParse = (s: string) => {
+    try { return JSON.parse(s); } catch { return null; }
+  };
+
+  const m = trimmed.match(/\{[\s\S]*\}/);
+  if (m) {
+    const parsed = tryParse(m[0]);
+    if (parsed) return parsed;
+  }
+
+  const lastBrace = trimmed.lastIndexOf('}');
+  if (lastBrace === -1) {
+    const partial = tryParse(trimmed + '}');
+    if (partial) return partial;
+    const partial2 = tryParse(trimmed + '"}');
+    if (partial2) return partial2;
+    throw new Error('LLM 输出中未找到 JSON');
+  }
+
+  const recovered = tryParse(trimmed.substring(0, lastBrace + 1));
+  if (recovered) return recovered;
+
+  throw new Error('LLM 输出 JSON 解析失败');
 }
 
 /** 六爻报告生成 */
@@ -86,15 +108,25 @@ export async function generateNajiaReport(r: NajiaResult, question: string): Pro
       { role: 'user', content: JSON.stringify(userPayload, null, 2) },
     ],
     temperature: 0.8,
-    max_tokens: 1200,
+    max_tokens: 2000,
   });
 
-  const out = extractJson(resp.choices[0]?.message?.content || '');
+  const rawContent = resp.choices[0]?.message?.content || '';
+  console.log('[LLM 六爻] === 发送给 DeepSeek 的 Prompt ===');
+  console.log('[LLM 六爻] System:', NAJIA_SYSTEM.substring(0, 200) + '...');
+  console.log('[LLM 六爻] User payload keys:', Object.keys(userPayload));
+  console.log('[LLM 六爻] 六爻数量:', userPayload.六爻?.length);
+  console.log('[LLM 六爻] === 完整 User Payload ===');
+  console.log(JSON.stringify(userPayload, null, 2));
+  console.log('[LLM 六爻] DeepSeek 返回 choices 数量:', resp.choices?.length);
+  console.log('[LLM 六爻] DeepSeek finish_reason:', resp.choices[0]?.finish_reason);
+  console.log('[LLM 六爻] DeepSeek 原始返回:', rawContent);
+  const out = extractJson(rawContent);
   return {
     report: {
-      verification: out.verification || r.report.verification,
-      crux: out.crux || r.report.crux,
-      timing: out.timing || r.report.timing,
+      verification: out.verification || '',
+      crux: out.crux || '',
+      timing: out.timing || '',
     },
     tooltip: r.tooltip,
   };
@@ -123,16 +155,22 @@ export async function generateZhouyiReport(r: ZhouyiResult, question: string): P
       { role: 'user', content: JSON.stringify(userPayload, null, 2) },
     ],
     temperature: 0.9,
-    max_tokens: 1200,
+    max_tokens: 2000,
   });
 
-  const out = extractJson(resp.choices[0]?.message?.content || '');
+  const rawContent2 = resp.choices[0]?.message?.content || '';
+  console.log('[LLM 周易] === 发送给 DeepSeek 的 Prompt ===');
+  console.log('[LLM 周易] System:', ZHOUYI_SYSTEM.substring(0, 200) + '...');
+  console.log('[LLM 周易] User payload keys:', Object.keys(userPayload));
+  console.log('[LLM 周易] DeepSeek finish_reason:', resp.choices[0]?.finish_reason);
+  console.log('[LLM 周易] DeepSeek 原始返回:', rawContent2);
+  const out = extractJson(rawContent2);
   return {
     report: {
       greeting: '见字如面。',
-      metaphor: out.metaphor || r.report.metaphor,
-      strategy: out.strategy || r.report.strategy,
+      metaphor: out.metaphor || '',
+      strategy: out.strategy || '',
     },
-    quote: out.quote || r.quote,
+    quote: out.quote || '',
   };
 }

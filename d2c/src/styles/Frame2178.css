@@ -1195,3 +1195,49 @@
   width: 100%;
   height: 100%;
 }
+
+.sq-skeleton {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--c-paper-deep) 25%, rgba(201, 164, 75, 0.12) 50%, var(--c-paper-deep) 75%);
+  background-size: 200% 100%;
+  animation: sq-shimmer 2.2s ease-in-out infinite;
+}
+
+.sq-skeleton-line {
+  height: 14px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+.sq-skeleton-line:last-child { margin-bottom: 0; width: 60%; }
+
+.sq-loader-ring {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--c-gold);
+  font-size: 12px;
+  font-family: "Source Han Serif CN-Medium";
+  letter-spacing: 2px;
+}
+
+.sq-loader-ring::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--c-gold);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: sq-ring-spin 1s linear infinite;
+}
+
+@keyframes sq-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes sq-ring-spin {
+  to { transform: rotate(360deg); }
+}

@@ -69,12 +69,13 @@ const Frame290 = () => {
             timestamp: Date.now(),
             tosses: tosses as [number, number, number, number, number, number],
           });
-          update({ ...cur, tosses, [resultKey]: baseResult });
+          update({ ...cur, tosses, [resultKey]: baseResult, interpretLoading: true });
           navigate(route);
           interpretApi(baseResult, cur.question || "心中默念，凝神问卜").then((aiResult) => {
-            saveState({ ...cur, tosses, [resultKey]: aiResult });
+            saveState({ ...cur, tosses, [resultKey]: aiResult, interpretLoading: false });
           }).catch((e) => {
             console.warn("interpret 后台降级为引擎文案", e);
+            saveState({ ...cur, tosses, [resultKey]: baseResult, interpretLoading: false });
           });
         } catch (e) {
           console.error(e);

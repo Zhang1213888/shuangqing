@@ -14,12 +14,14 @@ export interface CastingState {
   /** 排盘结果（第 6 爻完成后由 /api/cast 填充） */
   najiaResult?: any;
   zhouyiResult?: any;
+  /** LLM 解卦文案是否正在生成中 */
+  interpretLoading: boolean;
 }
 
 const KEY = 'sq_casting_state';
 export const DEFAULT_QUESTION = '心中默念，凝神问卜';
 
-const empty: CastingState = { mode: 'NAJIA', question: DEFAULT_QUESTION, tosses: [] };
+const empty: CastingState = { mode: 'NAJIA', question: DEFAULT_QUESTION, tosses: [], interpretLoading: false };
 
 export function loadState(): CastingState {
   try {

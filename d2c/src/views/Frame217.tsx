@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from "react";
 import { useNavigate } from "react-router";
-import { resetState } from "@/lib/store";
+import { resetState, DEFAULT_QUESTION } from "@/lib/store";
 import "@/styles/Frame217.css";
 
 const Frame217 = () => {
@@ -30,7 +30,7 @@ const Frame217 = () => {
     };
 
     const go = useCallback((mode: "NAJIA" | "ZHOUYI") => {
-        const finalQuestion = question.trim() || undefined;
+        const finalQuestion = question.trim() || DEFAULT_QUESTION;
         resetState(mode, finalQuestion);
         navigate("/casting");
     }, [question, navigate]);

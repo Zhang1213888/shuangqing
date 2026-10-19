@@ -187,9 +187,9 @@ export function zhouyiCast(req: CastRequest, llmReport?: { metaphor: string; str
     },
     report: {
       greeting: '见字如面。',
-      metaphor: llmReport?.metaphor || '（LLM 待生成：象之隐喻）',
-      strategy: llmReport?.strategy || '（LLM 待生成：破局之道）',
+      metaphor: llmReport?.metaphor || '',
+      strategy: llmReport?.strategy || '',
     },
-    quote: llmReport?.quote || '藏器于身，待时而动。',
+    quote: llmReport?.quote || '',
   };
 }

@@ -6,6 +6,7 @@ const Frame2178 = () => {
     const navigate = useNavigate();
     const [state] = useCastingState();
     const r = state.najiaResult;
+    const loading = state.interpretLoading;
     const L = (i: number) => r?.lines?.[i - 1];
     const [selectedLine, setSelectedLine] = useState<number>(() => r?.yongshenIndex || r?.shiIndex || 6);
     const getPrimaryTag = (line: any): string => {
@@ -644,8 +645,15 @@ const Frame2178 = () => {
                                                 className="Pixso-paragraph-2_291 pixso-relative-no-shrink pixso-h-auto"
                                             >
                                                 {
-                                                    r?.report?.verification ?? ''
-                                                }
+                          loading ? (
+                            <div style={{ width: '100%' }}>
+                              <div className="sq-loader-ring" style={{ marginBottom: 12 }}>卦象推演中</div>
+                              <div className="sq-skeleton sq-skeleton-line" />
+                              <div className="sq-skeleton sq-skeleton-line" />
+                              <div className="sq-skeleton sq-skeleton-line" />
+                            </div>
+                          ) : (r?.report?.verification ?? '')
+                        }
                                             </p>
                                         </div>
                                     </div>
@@ -681,8 +689,14 @@ const Frame2178 = () => {
                                                 className="Pixso-paragraph-2_296 pixso-relative-no-shrink pixso-h-auto"
                                             >
                                                 {
-                                                    r?.report?.crux ?? ''
-                                                }
+                          loading ? (
+                            <div style={{ width: '100%' }}>
+                              <div className="sq-loader-ring" style={{ marginBottom: 12 }}>解卦中</div>
+                              <div className="sq-skeleton sq-skeleton-line" />
+                              <div className="sq-skeleton sq-skeleton-line" />
+                            </div>
+                          ) : (r?.report?.crux ?? '')
+                        }
                                             </p>
                                         </div>
                                     </div>
@@ -718,8 +732,13 @@ const Frame2178 = () => {
                                                 className="Pixso-paragraph-2_301 pixso-relative-no-shrink pixso-h-auto"
                                             >
                                                 {
-                                                    r?.report?.timing ?? ''
-                                                }
+                          loading ? (
+                            <div style={{ width: '100%' }}>
+                              <div className="sq-loader-ring" style={{ marginBottom: 12 }}>推演中</div>
+                              <div className="sq-skeleton sq-skeleton-line" />
+                            </div>
+                          ) : (r?.report?.timing ?? '')
+                        }
                                             </p>
                                         </div>
                                     </div>
